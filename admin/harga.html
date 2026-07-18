@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kelola Harga - Rullzye Store Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../assets/css/admin.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+</head><body class="admin-body">
+<aside class="admin-sidebar" id="adminSidebar">
+<div class="sidebar-header"><div class="sidebar-logo">R</div><div class="sidebar-brand">Rullzye Store <small>Admin Panel</small></div></div>
+<nav class="sidebar-nav">
+<div class="sidebar-label">Menu</div>
+<a href="index.html" class="sidebar-item"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+<a href="layanan.html" class="sidebar-item"><i class="fas fa-cogs"></i><span>Kelola Layanan</span></a>
+<a href="portofolio.html" class="sidebar-item"><i class="fas fa-briefcase"></i><span>Kelola Portofolio</span></a>
+<a href="harga.html" class="sidebar-item active"><i class="fas fa-tags"></i><span>Kelola Harga</span></a>
+<a href="testimoni.html" class="sidebar-item"><i class="fas fa-comments"></i><span>Kelola Testimoni</span></a>
+<a href="faq.html" class="sidebar-item"><i class="fas fa-question-circle"></i><span>Kelola FAQ</span></a>
+<a href="artikel.html" class="sidebar-item"><i class="fas fa-newspaper"></i><span>Kelola Artikel</span></a>
+<div class="sidebar-label">Transaksi</div>
+<a href="pesanan.html" class="sidebar-item"><i class="fas fa-shopping-cart"></i><span>Kelola Pesanan</span></a>
+<a href="customer.html" class="sidebar-item"><i class="fas fa-users"></i><span>Kelola Customer</span></a>
+</nav>
+<div class="sidebar-footer">
+<a href="../index.html" class="sidebar-item"><i class="fas fa-external-link-alt"></i><span>Lihat Website</span></a>
+<a href="#" class="sidebar-item" onclick="API.logout()"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+</div>
+</aside>
+<main class="admin-main">
+<header class="admin-topbar">
+<div class="topbar-left">
+<button class="toggle-sidebar" onclick="document.getElementById('adminSidebar').classList.toggle('collapsed')"><i class="fas fa-bars"></i></button>
+<div class="topbar-search"><i class="fas fa-search"></i><input type="text" id="searchHarga" placeholder="Cari paket..."></div>
+</div>
+<div class="topbar-right">
+<button class="topbar-notif"><i class="fas fa-bell"></i><span class="notif-badge">0</span></button>
+<div class="topbar-avatar">A</div>
+</div>
+</header>
+<div class="admin-content">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+<div><h1 class="page-title">Kelola Harga</h1><p class="page-subtitle">Atur paket harga layanan.</p></div>
+<button class="btn btn-primary" onclick="crud.create()"><i class="fas fa-plus"></i> Tambah Paket</button>
+</div>
+<div class="data-table-wrap">
+<div class="data-table-header"><h3>Daftar Paket Harga</h3></div>
+<table class="data-table"><thead><tr><th>Nama Paket</th><th>Harga Bulanan</th><th>Harga Tahunan</th><th>Fitur</th><th>Featured</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="hargaTable"></tbody></table>
+</div>
+</div>
+</main>
+<div class="modal-overlay" id="hargaModal">
+<div class="modal-content">
+<div class="modal-header"><h3 id="hargaModalTitle">Tambah Paket</h3><button onclick="crud.closeModal()"><i class="fas fa-times"></i></button></div>
+<form id="hargaForm">
+<div class="modal-body">
+<div class="form-group"><label>Nama Paket</label><input class="form-control" name="name" required></div>
+<div class="form-group"><label>Harga Bulanan</label><input class="form-control" name="priceMonthly" placeholder="Rp 499.000"></div>
+<div class="form-group"><label>Harga Tahunan</label><input class="form-control" name="priceAnnual" placeholder="Rp 4.999.000"></div>
+<div class="form-group"><label>Mata Uang</label><input class="form-control" name="currency" value="Rp"></div>
+<div class="form-group"><label>Periode Label</label><input class="form-control" name="period" placeholder="/bulan"></div>
+<div class="form-group"><label>Tombol Text</label><input class="form-control" name="buttonText" value="Pilih Paket"></div>
+<div class="form-group"><label>Tombol Link</label><input class="form-control" name="buttonLink" placeholder="#order"></div>
+<div class="form-group"><label>Label Populer</label><input class="form-control" name="popularLabel" placeholder="Terpopuler"></div>
+<div class="form-group"><label>Fitur (satu per baris)</label><textarea class="form-control" name="features" rows="5" placeholder="Fitur 1&#10;Fitur 2&#10;Fitur 3"></textarea></div>
+<div class="form-group"><label>Urutan</label><input class="form-control" name="sortOrder" type="number" value="0"></div>
+<div class="form-group"><label><input type="checkbox" name="isFeatured"> Paket Featured</label></div>
+<div class="form-group"><label><input type="checkbox" name="isActive" checked> Aktif</label></div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" onclick="crud.closeModal()">Batal</button>
+<button type="submit" class="btn btn-primary">Simpan</button>
+</div>
+</form>
+</div>
+</div>
+<script src="js/api.js"></script>
+<script src="js/auth-check.js"></script>
+<script src="js/crud.js"></script>
+<script>
+const crud = new CrudManager({
+  apiEndpoint: '/pricings',
+  tableId: 'hargaTable',
+  modalId: 'hargaModal',
+  modalTitleId: 'hargaModalTitle',
+  formId: 'hargaForm',
+  searchId: 'searchHarga',
+  label: 'Paket Harga',
+  columns: [
+    { field: 'name' },
+    { field: 'priceMonthly', render: (item) => item.priceMonthly || '-' },
+    { field: 'priceAnnual', render: (item) => item.priceAnnual || '-' },
+    { field: 'features', render: (item) => Array.isArray(item.features) ? item.features.length + ' fitur' : '-' },
+    { field: 'isFeatured', render: (item) => item.isFeatured ? '<span style="color:var(--amber)"><i class="fas fa-star"></i></span>' : '-' },
+    { field: 'isActive', render: (item) => API.statusBadge(item.isActive ? 'active' : 'inactive') },
+  ],
+  fields: [
+    { field: 'name' }, { field: 'priceMonthly' }, { field: 'priceAnnual' },
+    { field: 'currency' }, { field: 'period' }, { field: 'buttonText' },
+    { field: 'buttonLink' }, { field: 'popularLabel' }, { field: 'features' },
+    { field: 'sortOrder' }, { field: 'isFeatured' }, { field: 'isActive' },
+  ],
+  serialize: (data) => {
+    if (typeof data.features === 'string') data.features = data.features.split('\n').filter(f => f.trim());
+    return data;
+  },
+});
+
+// Override handleSubmit to serialize features
+const origSubmit = crud.handleSubmit;
+crud.handleSubmit = async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = {};
+  this.config.fields.forEach(f => {
+    const el = form.elements[f.field];
+    if (!el) return;
+    if (el.type === 'checkbox') data[f.field] = el.checked;
+    else data[f.field] = el.value;
+  });
+  if (typeof data.features === 'string') data.features = data.features.split('\n').filter(f => f.trim());
+  try {
+    if (this.editingId) {
+      await API.put(`${this.config.apiEndpoint}/${this.editingId}`, data);
+      this.showSuccess('Data berhasil diperbarui');
+    } else {
+      await API.post(this.config.apiEndpoint, data);
+      this.showSuccess('Data berhasil ditambahkan');
+    }
+    this.closeModal();
+    this.load();
+  } catch (err) { this.showError(err.message); }
+};
+
+// Override edit to handle features array -> textarea
+const origEdit = crud.edit;
+crud.edit = async function(id) {
+  const item = this.items.find(i => i.id === id);
+  if (!item) return;
+  this.editingId = id;
+  const form = document.getElementById(this.config.formId);
+  if (!form) return;
+  this.config.fields.forEach(f => {
+    const el = form.elements[f.field];
+    if (!el) return;
+    const val = this.getNestedValue(item, f.field);
+    if (f.field === 'features' && Array.isArray(val)) {
+      el.value = val.join('\n');
+    } else if (el.type === 'checkbox') {
+      el.checked = !!val;
+    } else {
+      el.value = val != null ? val : '';
+    }
+  });
+  document.getElementById(this.config.modalTitleId).textContent = 'Edit ' + this.config.label;
+  this.openModal();
+};
+</script>
+</body></html>

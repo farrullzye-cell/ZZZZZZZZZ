@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="id"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Kelola Layanan - Rullzye Store Admin</title>
+<title>Kelola FAQ - Rullzye Store Admin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -12,11 +12,11 @@
 <nav class="sidebar-nav">
 <div class="sidebar-label">Menu</div>
 <a href="index.html" class="sidebar-item"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
-<a href="layanan.html" class="sidebar-item active"><i class="fas fa-cogs"></i><span>Kelola Layanan</span></a>
+<a href="layanan.html" class="sidebar-item"><i class="fas fa-cogs"></i><span>Kelola Layanan</span></a>
 <a href="portofolio.html" class="sidebar-item"><i class="fas fa-briefcase"></i><span>Kelola Portofolio</span></a>
 <a href="harga.html" class="sidebar-item"><i class="fas fa-tags"></i><span>Kelola Harga</span></a>
 <a href="testimoni.html" class="sidebar-item"><i class="fas fa-comments"></i><span>Kelola Testimoni</span></a>
-<a href="faq.html" class="sidebar-item"><i class="fas fa-question-circle"></i><span>Kelola FAQ</span></a>
+<a href="faq.html" class="sidebar-item active"><i class="fas fa-question-circle"></i><span>Kelola FAQ</span></a>
 <a href="artikel.html" class="sidebar-item"><i class="fas fa-newspaper"></i><span>Kelola Artikel</span></a>
 <div class="sidebar-label">Transaksi</div>
 <a href="pesanan.html" class="sidebar-item"><i class="fas fa-shopping-cart"></i><span>Kelola Pesanan</span></a>
@@ -31,7 +31,7 @@
 <header class="admin-topbar">
 <div class="topbar-left">
 <button class="toggle-sidebar" onclick="document.getElementById('adminSidebar').classList.toggle('collapsed')"><i class="fas fa-bars"></i></button>
-<div class="topbar-search"><i class="fas fa-search"></i><input type="text" id="searchLayanan" placeholder="Cari layanan..."></div>
+<div class="topbar-search"><i class="fas fa-search"></i><input type="text" id="searchFaq" placeholder="Cari FAQ..."></div>
 </div>
 <div class="topbar-right">
 <button class="topbar-notif"><i class="fas fa-bell"></i><span class="notif-badge">0</span></button>
@@ -40,25 +40,22 @@
 </header>
 <div class="admin-content">
 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
-<div><h1 class="page-title">Kelola Layanan</h1><p class="page-subtitle">Atur daftar layanan pembuatan website.</p></div>
-<button class="btn btn-primary" onclick="crud.create()"><i class="fas fa-plus"></i> Tambah Layanan</button>
+<div><h1 class="page-title">Kelola FAQ</h1><p class="page-subtitle">Atur pertanyaan yang sering diajukan.</p></div>
+<button class="btn btn-primary" onclick="crud.create()"><i class="fas fa-plus"></i> Tambah FAQ</button>
 </div>
 <div class="data-table-wrap">
-<div class="data-table-header"><h3>Daftar Layanan</h3><span style="font-size:12px;color:var(--text-muted)" id="layananCount">0 layanan</span></div>
-<table class="data-table"><thead><tr><th>Nama Layanan</th><th>Deskripsi</th><th>Icon</th><th>Urutan</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="layananTable"></tbody></table>
+<div class="data-table-header"><h3>Daftar FAQ</h3></div>
+<table class="data-table"><thead><tr><th>Pertanyaan</th><th>Urutan</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="faqTable"></tbody></table>
 </div>
 </div>
 </main>
-<!-- Modal -->
-<div class="modal-overlay" id="layananModal">
+<div class="modal-overlay" id="faqModal">
 <div class="modal-content">
-<div class="modal-header"><h3 id="layananModalTitle">Tambah Layanan</h3><button onclick="crud.closeModal()"><i class="fas fa-times"></i></button></div>
-<form id="layananForm">
+<div class="modal-header"><h3 id="faqModalTitle">Tambah FAQ</h3><button onclick="crud.closeModal()"><i class="fas fa-times"></i></button></div>
+<form id="faqForm">
 <div class="modal-body">
-<div class="form-group"><label>Nama Layanan</label><input class="form-control" name="name" required></div>
-<div class="form-group"><label>Deskripsi</label><textarea class="form-control" name="description" rows="3"></textarea></div>
-<div class="form-group"><label>Icon (Font Awesome class)</label><input class="form-control" name="icon" placeholder="fas fa-code"></div>
-<div class="form-group"><label>URL Gambar</label><input class="form-control" name="image" placeholder="https://..."></div>
+<div class="form-group"><label>Pertanyaan</label><textarea class="form-control" name="question" rows="2" required></textarea></div>
+<div class="form-group"><label>Jawaban</label><textarea class="form-control" name="answer" rows="5" required></textarea></div>
 <div class="form-group"><label>Urutan</label><input class="form-control" name="sortOrder" type="number" value="0"></div>
 <div class="form-group"><label><input type="checkbox" name="isActive" checked> Aktif</label></div>
 </div>
@@ -74,23 +71,20 @@
 <script src="js/crud.js"></script>
 <script>
 const crud = new CrudManager({
-  apiEndpoint: '/services',
-  tableId: 'layananTable',
-  modalId: 'layananModal',
-  modalTitleId: 'layananModalTitle',
-  formId: 'layananForm',
-  searchId: 'searchLayanan',
-  label: 'Layanan',
+  apiEndpoint: '/faqs',
+  tableId: 'faqTable',
+  modalId: 'faqModal',
+  modalTitleId: 'faqModalTitle',
+  formId: 'faqForm',
+  searchId: 'searchFaq',
+  label: 'FAQ',
   columns: [
-    { field: 'name' },
-    { field: 'description', render: (item) => (item.description || '').substring(0, 60) + '...' },
-    { field: 'icon', render: (item) => item.icon ? `<i class="${item.icon}" style="color:var(--cyan)"></i>` : '-' },
+    { field: 'question', render: (item) => (item.question || '').substring(0, 80) + '...' },
     { field: 'sortOrder' },
     { field: 'isActive', render: (item) => API.statusBadge(item.isActive ? 'active' : 'inactive') },
   ],
   fields: [
-    { field: 'name' }, { field: 'description' }, { field: 'icon' },
-    { field: 'image' }, { field: 'sortOrder' }, { field: 'isActive' },
+    { field: 'question' }, { field: 'answer' }, { field: 'sortOrder' }, { field: 'isActive' },
   ],
 });
 </script>

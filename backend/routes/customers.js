@@ -30,6 +30,17 @@ router.put('/profile', customerAuth, async (req, res) => {
   } catch (err) { res.status(400).json({ error: err.message }); }
 });
 
+router.put('/:id', adminAuth, async (req, res) => {
+  try {
+    const customer = await Customer.findByPk(req.params.id);
+    if (!customer) return res.status(404).json({ error: 'Customer tidak ditemukan' });
+    if (req.body.password) req.body.password = await bcrypt.hash(req.body.password, 10);
+    await customer.update(req.body);
+    const { password, ...data } = customer.toJSON();
+    res.json(data);
+  } catch (err) { res.status(400).json({ error: err.message }); }
+});
+
 router.delete('/:id', adminAuth, async (req, res) => {
   try {
     const customer = await Customer.findByPk(req.params.id);

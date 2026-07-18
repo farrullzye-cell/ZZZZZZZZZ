@@ -1,1 +1,99 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Kelola Portofolio - Rullzye Store Admin</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../assets/css/admin.css"><link rel="icon" type="image/png" href="/favicon.png"></head><body class="admin-body"><aside class="admin-sidebar" id="adminSidebar"> <div class="sidebar-header"><div class="sidebar-logo">R</div><div class="sidebar-brand">Rullzye Store <small>Admin Panel</small></div></div> <nav class="sidebar-nav"> <div class="sidebar-label">Menu</div> <a href="index.html" class="sidebar-item"><i class="fas fa-th-large"></i><span>Dashboard</span></a> <a href="layanan.html" class="sidebar-item"><i class="fas fa-cogs"></i><span>Kelola Layanan</span></a> <a href="portofolio.html" class="sidebar-item active"><i class="fas fa-briefcase"></i><span>Kelola Portofolio</span></a> <a href="harga.html" class="sidebar-item"><i class="fas fa-tags"></i><span>Kelola Harga</span></a> <a href="testimoni.html" class="sidebar-item"><i class="fas fa-comments"></i><span>Kelola Testimoni</span></a> <a href="faq.html" class="sidebar-item"><i class="fas fa-question-circle"></i><span>Kelola FAQ</span></a> <a href="artikel.html" class="sidebar-item"><i class="fas fa-newspaper"></i><span>Kelola Artikel</span></a> <div class="sidebar-label">Transaksi</div> <a href="pesanan.html" class="sidebar-item"><i class="fas fa-shopping-cart"></i><span>Kelola Pesanan</span></a> <a href="invoice.html" class="sidebar-item"><i class="fas fa-file-invoice"></i><span>Kelola Invoice</span></a> <a href="customer.html" class="sidebar-item"><i class="fas fa-users"></i><span>Kelola Customer</span></a> </nav> <div class="sidebar-footer"> <a href="../index.html" class="sidebar-item"><i class="fas fa-external-link-alt"></i><span>Lihat Website</span></a> <a href="../customer/login.html" class="sidebar-item"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a> </div> </aside> <main class="admin-main"> <header class="admin-topbar"> <div class="topbar-left"><button class="toggle-sidebar" onclick="document.getElementById('adminSidebar').classList.toggle('collapsed')"><i class="fas fa-bars"></i></button><div class="topbar-search"><i class="fas fa-search"></i><input type="text" placeholder="Cari..."></div></div> <div class="topbar-right"><button class="topbar-notif"><i class="fas fa-bell"></i><span class="notif-badge">3</span></button><div class="topbar-avatar">A</div></div> </header> <div class="admin-content"> <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px"><div><h1 class="page-title">Kelola Portofolio</h1><p class="page-subtitle">Atur portofolio project website.</p></div><button class="btn btn-primary" onclick="alert('Tambah portofolio baru')"><i class="fas fa-plus"></i> Tambah</button></div> <div class="data-table-wrap"> <div class="data-table-header"><h3>Daftar Portofolio</h3></div> <table class="data-table"> <thead><tr><th>Project</th><th>Kategori</th><th>Klien</th><th>Status</th><th>Aksi</th></tr></thead> <tbody> <tr><td>StartupTech Landing</td><td>Landing Page</td><td>PT Startup Tech</td><td><span class="status-badge active">Published</span></td><td><div class="table-actions"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="fas fa-trash"></i></button></div></td></tr> <tr><td>Admin Panel Pro</td><td>Dashboard</td><td>CV Digital Solusi</td><td><span class="status-badge active">Published</span></td><td><div class="table-actions"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="fas fa-trash"></i></button></div></td></tr> <tr><td>FashionStore Online</td><td>E-Commerce</td><td>Toko Fashion</td><td><span class="status-badge draft">Draft</span></td><td><div class="table-actions"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="fas fa-trash"></i></button></div></td></tr> </tbody> </table> </div> </div> </main> <script>document.querySelectorAll('.toggle-sidebar').forEach(b=>b.addEventListener('click',()=>document.getElementById('adminSidebar').classList.toggle('collapsed')))</script> </body></html>
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kelola Portofolio - Rullzye Store Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../assets/css/admin.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+</head><body class="admin-body">
+<aside class="admin-sidebar" id="adminSidebar">
+<div class="sidebar-header"><div class="sidebar-logo">R</div><div class="sidebar-brand">Rullzye Store <small>Admin Panel</small></div></div>
+<nav class="sidebar-nav">
+<div class="sidebar-label">Menu</div>
+<a href="index.html" class="sidebar-item"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+<a href="layanan.html" class="sidebar-item"><i class="fas fa-cogs"></i><span>Kelola Layanan</span></a>
+<a href="portofolio.html" class="sidebar-item active"><i class="fas fa-briefcase"></i><span>Kelola Portofolio</span></a>
+<a href="harga.html" class="sidebar-item"><i class="fas fa-tags"></i><span>Kelola Harga</span></a>
+<a href="testimoni.html" class="sidebar-item"><i class="fas fa-comments"></i><span>Kelola Testimoni</span></a>
+<a href="faq.html" class="sidebar-item"><i class="fas fa-question-circle"></i><span>Kelola FAQ</span></a>
+<a href="artikel.html" class="sidebar-item"><i class="fas fa-newspaper"></i><span>Kelola Artikel</span></a>
+<div class="sidebar-label">Transaksi</div>
+<a href="pesanan.html" class="sidebar-item"><i class="fas fa-shopping-cart"></i><span>Kelola Pesanan</span></a>
+<a href="customer.html" class="sidebar-item"><i class="fas fa-users"></i><span>Kelola Customer</span></a>
+</nav>
+<div class="sidebar-footer">
+<a href="../index.html" class="sidebar-item"><i class="fas fa-external-link-alt"></i><span>Lihat Website</span></a>
+<a href="#" class="sidebar-item" onclick="API.logout()"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+</div>
+</aside>
+<main class="admin-main">
+<header class="admin-topbar">
+<div class="topbar-left">
+<button class="toggle-sidebar" onclick="document.getElementById('adminSidebar').classList.toggle('collapsed')"><i class="fas fa-bars"></i></button>
+<div class="topbar-search"><i class="fas fa-search"></i><input type="text" id="searchPortofolio" placeholder="Cari portofolio..."></div>
+</div>
+<div class="topbar-right">
+<button class="topbar-notif"><i class="fas fa-bell"></i><span class="notif-badge">0</span></button>
+<div class="topbar-avatar">A</div>
+</div>
+</header>
+<div class="admin-content">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+<div><h1 class="page-title">Kelola Portofolio</h1><p class="page-subtitle">Atur portofolio project website.</p></div>
+<button class="btn btn-primary" onclick="crud.create()"><i class="fas fa-plus"></i> Tambah</button>
+</div>
+<div class="data-table-wrap">
+<div class="data-table-header"><h3>Daftar Portofolio</h3></div>
+<table class="data-table"><thead><tr><th>Project</th><th>Kategori</th><th>Klien</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="portofolioTable"></tbody></table>
+</div>
+</div>
+</main>
+<div class="modal-overlay" id="portofolioModal">
+<div class="modal-content">
+<div class="modal-header"><h3 id="portofolioModalTitle">Tambah Portofolio</h3><button onclick="crud.closeModal()"><i class="fas fa-times"></i></button></div>
+<form id="portofolioForm">
+<div class="modal-body">
+<div class="form-group"><label>Judul Project</label><input class="form-control" name="title" required></div>
+<div class="form-group"><label>Deskripsi</label><textarea class="form-control" name="description" rows="3"></textarea></div>
+<div class="form-group"><label>Kategori</label><input class="form-control" name="category" placeholder="Landing Page, E-Commerce, Dashboard"></div>
+<div class="form-group"><label>Nama Klien</label><input class="form-control" name="client"></div>
+<div class="form-group"><label>URL Thumbnail</label><input class="form-control" name="thumbnail" placeholder="https://..."></div>
+<div class="form-group"><label>Link Preview</label><input class="form-control" name="linkPreview" placeholder="https://..."></div>
+<div class="form-group"><label>Link Detail</label><input class="form-control" name="linkDetail" placeholder="https://..."></div>
+<div class="form-group"><label>Urutan</label><input class="form-control" name="sortOrder" type="number" value="0"></div>
+<div class="form-group"><label><input type="checkbox" name="isActive" checked> Aktif</label></div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" onclick="crud.closeModal()">Batal</button>
+<button type="submit" class="btn btn-primary">Simpan</button>
+</div>
+</form>
+</div>
+</div>
+<script src="js/api.js"></script>
+<script src="js/auth-check.js"></script>
+<script src="js/crud.js"></script>
+<script>
+const crud = new CrudManager({
+  apiEndpoint: '/portfolios',
+  tableId: 'portofolioTable',
+  modalId: 'portofolioModal',
+  modalTitleId: 'portofolioModalTitle',
+  formId: 'portofolioForm',
+  searchId: 'searchPortofolio',
+  label: 'Portofolio',
+  columns: [
+    { field: 'title' },
+    { field: 'category' },
+    { field: 'client' },
+    { field: 'isActive', render: (item) => API.statusBadge(item.isActive ? 'published' : 'draft') },
+  ],
+  fields: [
+    { field: 'title' }, { field: 'description' }, { field: 'category' },
+    { field: 'client' }, { field: 'thumbnail' }, { field: 'linkPreview' },
+    { field: 'linkDetail' }, { field: 'sortOrder' }, { field: 'isActive' },
+  ],
+});
+</script>
+</body></html>

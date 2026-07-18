@@ -1,69 +1,137 @@
 <!DOCTYPE html><html lang="id"><head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelola Pesanan - Rullzye Store Admin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../assets/css/admin.css">
-<link rel="icon" type="image/png" href="/favicon.png"></head><body class="admin-body">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kelola Pesanan - Rullzye Store Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../assets/css/admin.css">
+<link rel="icon" type="image/png" href="/favicon.png">
+</head><body class="admin-body">
 <aside class="admin-sidebar" id="adminSidebar">
-    <div class="sidebar-header"><div class="sidebar-logo">R</div><div class="sidebar-brand">Rullzye Store <small>Admin Panel</small></div></div>
-    <nav class="sidebar-nav">
-        <div class="sidebar-label">Menu</div>
-        <a href="index.html" class="sidebar-item"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
-        <a href="layanan.html" class="sidebar-item"><i class="fas fa-cogs"></i><span>Kelola Layanan</span></a>
-        <a href="portofolio.html" class="sidebar-item"><i class="fas fa-briefcase"></i><span>Kelola Portofolio</span></a>
-        <a href="harga.html" class="sidebar-item"><i class="fas fa-tags"></i><span>Kelola Harga</span></a>
-        <a href="testimoni.html" class="sidebar-item"><i class="fas fa-comments"></i><span>Kelola Testimoni</span></a>
-        <a href="faq.html" class="sidebar-item"><i class="fas fa-question-circle"></i><span>Kelola FAQ</span></a>
-        <a href="artikel.html" class="sidebar-item"><i class="fas fa-newspaper"></i><span>Kelola Artikel</span></a>
-        <div class="sidebar-label">Transaksi</div>
-        <a href="pesanan.html" class="sidebar-item active"><i class="fas fa-shopping-cart"></i><span>Kelola Pesanan</span></a>
-        <a href="invoice.html" class="sidebar-item"><i class="fas fa-file-invoice"></i><span>Kelola Invoice</span></a>
-        <a href="customer.html" class="sidebar-item"><i class="fas fa-users"></i><span>Kelola Customer</span></a>
-    </nav>
-    <div class="sidebar-footer">
-        <a href="../index.html" class="sidebar-item"><i class="fas fa-external-link-alt"></i><span>Lihat Website</span></a>
-        <a href="../customer/login.html" class="sidebar-item"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
-    </div>
+<div class="sidebar-header"><div class="sidebar-logo">R</div><div class="sidebar-brand">Rullzye Store <small>Admin Panel</small></div></div>
+<nav class="sidebar-nav">
+<div class="sidebar-label">Menu</div>
+<a href="index.html" class="sidebar-item"><i class="fas fa-th-large"></i><span>Dashboard</span></a>
+<a href="layanan.html" class="sidebar-item"><i class="fas fa-cogs"></i><span>Kelola Layanan</span></a>
+<a href="portofolio.html" class="sidebar-item"><i class="fas fa-briefcase"></i><span>Kelola Portofolio</span></a>
+<a href="harga.html" class="sidebar-item"><i class="fas fa-tags"></i><span>Kelola Harga</span></a>
+<a href="testimoni.html" class="sidebar-item"><i class="fas fa-comments"></i><span>Kelola Testimoni</span></a>
+<a href="faq.html" class="sidebar-item"><i class="fas fa-question-circle"></i><span>Kelola FAQ</span></a>
+<a href="artikel.html" class="sidebar-item"><i class="fas fa-newspaper"></i><span>Kelola Artikel</span></a>
+<div class="sidebar-label">Transaksi</div>
+<a href="pesanan.html" class="sidebar-item active"><i class="fas fa-shopping-cart"></i><span>Kelola Pesanan</span></a>
+<a href="customer.html" class="sidebar-item"><i class="fas fa-users"></i><span>Kelola Customer</span></a>
+</nav>
+<div class="sidebar-footer">
+<a href="../index.html" class="sidebar-item"><i class="fas fa-external-link-alt"></i><span>Lihat Website</span></a>
+<a href="#" class="sidebar-item" onclick="API.logout()"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+</div>
 </aside>
 <main class="admin-main">
-    <header class="admin-topbar">
-        <div class="topbar-left">
-            <button class="toggle-sidebar" onclick="document.getElementById('adminSidebar').classList.toggle('collapsed')"><i class="fas fa-bars"></i></button>
-            <div class="topbar-search"><i class="fas fa-search"></i><input type="text" placeholder="Cari pesanan..."></div>
-        </div>
-        <div class="topbar-right">
-            <button class="topbar-notif"><i class="fas fa-bell"></i><span class="notif-badge">3</span></button>
-            <div class="topbar-avatar">A</div>
-        </div>
-    </header>
-    <div class="admin-content">
-        <h1 class="page-title">Kelola Pesanan</h1>
-        <p class="page-subtitle">Monitor dan kelola semua pesanan customer.</p>
-        <div class="stat-cards">
-            <div class="stat-card"><div class="stat-card-value">48</div><div class="stat-card-label">Semua Pesanan</div></div>
-            <div class="stat-card"><div class="stat-card-value" style="color:var(--amber)">6</div><div class="stat-card-label">Pending</div></div>
-            <div class="stat-card"><div class="stat-card-value" style="color:var(--cyan)">10</div><div class="stat-card-label">Diproses</div></div>
-            <div class="stat-card"><div class="stat-card-value" style="color:var(--emerald)">32</div><div class="stat-card-label">Selesai</div></div>
-        </div>
-        <div class="data-table-wrap">
-            <div class="data-table-header"><h3>Semua Pesanan</h3></div>
-            <table class="data-table">
-                <thead><tr><th>ID</th><th>Customer</th><th>Paket</th><th>Tanggal</th><th>Total</th><th>Status</th><th>Progress</th><th>Aksi</th></tr></thead>
-                <tbody>
-                    <tr><td>#RS-001</td><td>Andi Pratama</td><td>Professional</td><td>15 Jan 2026</td><td>Rp 1.500.000</td><td><span class="status-badge pending">Pending</span></td><td>0%</td><td><div class="table-actions"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="fas fa-trash"></i></button></div></td></tr>
-                    <tr><td>#RS-002</td><td>Siti Rahmawati</td><td>Business</td><td>14 Jan 2026</td><td>Rp 3.500.000</td><td><span class="status-badge active">Diproses</span></td><td>60%</td><td><div class="table-actions"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="fas fa-trash"></i></button></div></td></tr>
-                    <tr><td>#RS-003</td><td>Bambang Susilo</td><td>Starter</td><td>13 Jan 2026</td><td>Rp 499.000</td><td><span class="status-badge active">Selesai</span></td><td>100%</td><td><div class="table-actions"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="fas fa-trash"></i></button></div></td></tr>
-                    <tr><td>#RS-004</td><td>Dewi Lestari</td><td>Enterprise</td><td>12 Jan 2026</td><td>Custom</td><td><span class="status-badge draft">Konsultasi</span></td><td>-</td><td><div class="table-actions"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="fas fa-trash"></i></button></div></td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+<header class="admin-topbar">
+<div class="topbar-left">
+<button class="toggle-sidebar" onclick="document.getElementById('adminSidebar').classList.toggle('collapsed')"><i class="fas fa-bars"></i></button>
+<div class="topbar-search"><i class="fas fa-search"></i><input type="text" id="searchPesanan" placeholder="Cari pesanan..."></div>
+</div>
+<div class="topbar-right">
+<button class="topbar-notif"><i class="fas fa-bell"></i><span class="notif-badge">0</span></button>
+<div class="topbar-avatar">A</div>
+</div>
+</header>
+<div class="admin-content">
+<h1 class="page-title">Kelola Pesanan</h1>
+<p class="page-subtitle">Monitor dan kelola semua pesanan customer.</p>
+<div class="stat-cards">
+<div class="stat-card"><div class="stat-card-value" id="statAllOrders">-</div><div class="stat-card-label">Semua Pesanan</div></div>
+<div class="stat-card"><div class="stat-card-value" style="color:var(--amber)" id="statPendingCount">-</div><div class="stat-card-label">Pending</div></div>
+<div class="stat-card"><div class="stat-card-value" style="color:var(--cyan)" id="statProcessingCount">-</div><div class="stat-card-label">Diproses</div></div>
+<div class="stat-card"><div class="stat-card-value" style="color:var(--emerald)" id="statCompletedCount">-</div><div class="stat-card-label">Selesai</div></div>
+</div>
+<div class="data-table-wrap">
+<div class="data-table-header"><h3>Semua Pesanan</h3></div>
+<table class="data-table"><thead><tr><th>ID</th><th>Customer</th><th>Paket</th><th>Tanggal</th><th>Total</th><th>Status</th><th>Progress</th><th>Pembayaran</th><th>Aksi</th></tr></thead><tbody id="pesananTable"></tbody></table>
+</div>
+</div>
 </main>
+<div class="modal-overlay" id="pesananModal">
+<div class="modal-content">
+<div class="modal-header"><h3 id="pesananModalTitle">Edit Pesanan</h3><button onclick="crud.closeModal()"><i class="fas fa-times"></i></button></div>
+<form id="pesananForm">
+<div class="modal-body">
+<div class="form-group"><label>ID Pesanan</label><input class="form-control" name="orderNumber" readonly style="opacity:0.6"></div>
+<div class="form-group"><label>Nama Customer</label><input class="form-control" name="customerName" required></div>
+<div class="form-group"><label>Email</label><input class="form-control" name="customerEmail" type="email"></div>
+<div class="form-group"><label>No. WA</label><input class="form-control" name="customerPhone"></div>
+<div class="form-group"><label>Nama Paket</label><input class="form-control" name="packageName" required></div>
+<div class="form-group"><label>Harga Paket</label><input class="form-control" name="packagePrice" placeholder="Rp"></div>
+<div class="form-group"><label>Total Bayar</label><input class="form-control" name="totalAmount" type="number" step="0.01"></div>
+<div class="form-group"><label>Status Pesanan</label>
+<select class="form-control" name="status">
+<option value="pending">Pending</option>
+<option value="consultation">Konsultasi</option>
+<option value="processing">Diproses</option>
+<option value="completed">Selesai</option>
+<option value="cancelled">Dibatalkan</option>
+</select></div>
+<div class="form-group"><label>Progress (%)</label><input class="form-control" name="progress" type="number" min="0" max="100" value="0"></div>
+<div class="form-group"><label>Status Pembayaran</label>
+<select class="form-control" name="paymentStatus">
+<option value="unpaid">Belum Bayar</option>
+<option value="dp">DP</option>
+<option value="paid">Lunas</option>
+</select></div>
+<div class="form-group"><label>Catatan</label><textarea class="form-control" name="notes" rows="3"></textarea></div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" onclick="crud.closeModal()">Batal</button>
+<button type="submit" class="btn btn-primary">Simpan</button>
+</div>
+</form>
+</div>
+</div>
+<script src="js/api.js"></script>
+<script src="js/auth-check.js"></script>
+<script src="js/crud.js"></script>
 <script>
-    document.querySelectorAll('.toggle-sidebar').forEach(b => {
-        b.addEventListener('click', () => document.getElementById('adminSidebar').classList.toggle('collapsed'));
-    });
+const crud = new CrudManager({
+  apiEndpoint: '/orders',
+  tableId: 'pesananTable',
+  modalId: 'pesananModal',
+  modalTitleId: 'pesananModalTitle',
+  formId: 'pesananForm',
+  searchId: 'searchPesanan',
+  label: 'Pesanan',
+  columns: [
+    { field: 'orderNumber', render: (item) => item.orderNumber || '#' + item.id.slice(0,8) },
+    { field: 'customerName' },
+    { field: 'packageName' },
+    { field: 'createdAt', render: (item) => API.formatDate(item.createdAt) },
+    { field: 'totalAmount', render: (item) => API.formatCurrency(item.totalAmount) },
+    { field: 'status', render: (item) => API.statusBadge(item.status) },
+    { field: 'progress', render: (item) => item.progress != null ? item.progress + '%' : '-' },
+    { field: 'paymentStatus', render: (item) => API.statusBadge(item.paymentStatus) },
+  ],
+  fields: [
+    { field: 'orderNumber' }, { field: 'customerName' }, { field: 'customerEmail' },
+    { field: 'customerPhone' }, { field: 'packageName' }, { field: 'packagePrice' },
+    { field: 'totalAmount' }, { field: 'status' }, { field: 'progress' },
+    { field: 'paymentStatus' }, { field: 'notes' },
+  ],
+});
+
+// Override load to also update stat cards
+const origLoad = crud.load;
+crud.load = async function() {
+  try {
+    const data = await API.get('/orders');
+    this.items = data;
+    this.render();
+    document.getElementById('statAllOrders').textContent = data.length;
+    document.getElementById('statPendingCount').textContent = data.filter(o => o.status === 'pending').length;
+    document.getElementById('statProcessingCount').textContent = data.filter(o => o.status === 'processing').length;
+    document.getElementById('statCompletedCount').textContent = data.filter(o => o.status === 'completed').length;
+  } catch (err) { this.showError(err.message); }
+};
+crud.load();
 </script>
 </body></html>
