@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /customer/
-Disallow: /assets/
-Disallow: /uploads/
 
-Sitemap: https://rullzyestore.com/sitemap.xml
+Sitemap: https://arulfaathirweb.online/sitemap.xml

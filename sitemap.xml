@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url><loc>https://rullzyestore.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
-    <url><loc>https://rullzyestore.com/blog/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-    <url><loc>https://rullzyestore.com/blog/post.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
-    <url><loc>https://rullzyestore.com/customer/login.html</loc><priority>0.4</priority><changefreq>monthly</changefreq></url>
-    <url><loc>https://rullzyestore.com/customer/register.html</loc><priority>0.4</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/404.html</loc><priority>0.1</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/blog/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/blog/post.html</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/admin/</loc><priority>0.5</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/admin/layanan.html</loc><priority>0.5</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/admin/portofolio.html</loc><priority>0.5</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/admin/harga.html</loc><priority>0.5</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/admin/testimoni.html</loc><priority>0.5</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/admin/faq.html</loc><priority>0.5</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/admin/artikel.html</loc><priority>0.5</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/admin/pesanan.html</loc><priority>0.5</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/admin/customer.html</loc><priority>0.5</priority><changefreq>daily</changefreq></url>
+  <url><loc>https://arulfaathirweb.online/customer/login.html</loc><priority>0.3</priority><changefreq>monthly</changefreq></url>
 </urlset>
