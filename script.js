@@ -302,45 +302,51 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===== SCROLL REVEAL (non-GSAP fallback) =====
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let revealObserver = null;
 
-if (!prefersReducedMotion) {
-    const observer = new IntersectionObserver((entries) => {
+function initRevealObserver() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+        document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+            const t = parseFloat(el.dataset.target);
+            const s = el.dataset.suffix || '';
+            const p = el.dataset.prefix || '';
+            const d = parseInt(el.dataset.decimal) || 0;
+            let v = d > 0 ? t.toFixed(d) : t;
+            if (el.dataset.comma === 'true') v = Number(v).toLocaleString();
+            el.textContent = p + v + s;
+        });
+        return;
+    }
+    if (revealObserver) revealObserver.disconnect();
+    revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const siblings = entry.target.parentElement.querySelectorAll('.fade-up:not(.visible)');
                 const idx = Array.from(siblings).indexOf(entry.target);
                 setTimeout(() => entry.target.classList.add('visible'), Math.max(0, idx) * 100);
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
-
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // Counter observer (for stats that GSAP doesn't cover)
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                counterObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.stat-number[data-target]').forEach(el => counterObserver.observe(el));
-} else {
-    document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
-    document.querySelectorAll('.stat-number[data-target]').forEach(el => {
-        const t = parseFloat(el.dataset.target);
-        const s = el.dataset.suffix || '';
-        const p = el.dataset.prefix || '';
-        const d = parseInt(el.dataset.decimal) || 0;
-        let v = d > 0 ? t.toFixed(d) : t;
-        if (el.dataset.comma === 'true') v = Number(v).toLocaleString();
-        el.textContent = p + v + s;
-    });
+    document.querySelectorAll('.fade-up').forEach(el => revealObserver.observe(el));
 }
+
+window.refreshReveal = initRevealObserver;
+initRevealObserver();
+
+// Counter observer (for stats that GSAP doesn't cover)
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-number[data-target]').forEach(el => counterObserver.observe(el));
 
 // ===== COUNTER ANIMATION =====
 function animateCounter(el) {
@@ -392,57 +398,86 @@ if (filterBtns.length && portfolioGrid) {
 }
 
 // ===== TESTIMONIAL SLIDER =====
-const track = document.getElementById('testimoniTrack');
-const prevBtn = document.getElementById('prevTestimoni');
-const nextBtn = document.getElementById('nextTestimoni');
-const dotsContainer = document.getElementById('testimoniDots');
+let currentSlide = 0;
+let autoSlideTimer = null;
+let prevBtn, nextBtn, dotsContainer, track;
 
-if (track && dotsContainer) {
+function initSlider() {
+    track = document.getElementById('testimoniTrack');
+    prevBtn = document.getElementById('prevTestimoni');
+    nextBtn = document.getElementById('nextTestimoni');
+    dotsContainer = document.getElementById('testimoniDots');
+    if (!track || !dotsContainer) return;
+    if (autoSlideTimer) clearInterval(autoSlideTimer);
+
     const slides = track.querySelectorAll('.testimoni-card');
-    let currentSlide = 0;
     const totalSlides = slides.length;
+    if (totalSlides === 0) return;
 
-    if (totalSlides > 0) {
+    currentSlide = 0;
+    const existingDots = dotsContainer.querySelectorAll('.testimoni-dot');
+    if (existingDots.length !== totalSlides) {
+        dotsContainer.innerHTML = '';
         slides.forEach((_, i) => {
             const dot = document.createElement('button');
             dot.className = 'testimoni-dot' + (i === 0 ? ' active' : '');
             dot.addEventListener('click', () => goToSlide(i));
             dotsContainer.appendChild(dot);
         });
+    }
 
-        function goToSlide(index) {
-            currentSlide = index;
+    function goToSlide(index) {
+        currentSlide = index;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dotsContainer.querySelectorAll('.testimoni-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === currentSlide);
+        });
+    }
+
+    if (prevBtn) prevBtn.replaceWith?.(prevBtn.cloneNode(true));
+    if (nextBtn) nextBtn.replaceWith?.(nextBtn.cloneNode(true));
+    prevBtn = document.getElementById('prevTestimoni');
+    nextBtn = document.getElementById('nextTestimoni');
+
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dotsContainer.querySelectorAll('.testimoni-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === currentSlide);
+        });
+    });
+
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dotsContainer.querySelectorAll('.testimoni-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === currentSlide);
+        });
+    });
+
+    autoSlideTimer = setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dotsContainer.querySelectorAll('.testimoni-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === currentSlide);
+        });
+    }, 5000);
+
+    track.addEventListener('mouseenter', () => { if (autoSlideTimer) clearInterval(autoSlideTimer); });
+    track.addEventListener('mouseleave', () => {
+        if (autoSlideTimer) clearInterval(autoSlideTimer);
+        autoSlideTimer = setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
             dotsContainer.querySelectorAll('.testimoni-dot').forEach((d, i) => {
                 d.classList.toggle('active', i === currentSlide);
             });
-        }
-
-        if (prevBtn) prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            goToSlide(currentSlide);
-        });
-
-        if (nextBtn) nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            goToSlide(currentSlide);
-        });
-
-        // Auto-slide
-        let autoSlide = setInterval(() => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            goToSlide(currentSlide);
         }, 5000);
-
-        track.addEventListener('mouseenter', () => clearInterval(autoSlide));
-        track.addEventListener('mouseleave', () => {
-            autoSlide = setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                goToSlide(currentSlide);
-            }, 5000);
-        });
-    }
+    });
 }
+
+window.reinitSlider = initSlider;
+initSlider();
 
 // ===== FAQ TOGGLE =====
 function toggleFaq(element) {
@@ -462,8 +497,6 @@ function toggleFaq(element) {
 const pricingToggle = document.getElementById('pricingToggle');
 const monthlyLabel = document.getElementById('monthlyLabel');
 const annualLabel = document.getElementById('annualLabel');
-const priceValues = document.querySelectorAll('.pricing-value');
-const pricePeriods = document.querySelectorAll('.pricing-period[data-annual-total]');
 let isAnnual = false;
 
 if (pricingToggle) {
@@ -473,10 +506,9 @@ if (pricingToggle) {
         monthlyLabel.classList.toggle('active', !isAnnual);
         annualLabel.classList.toggle('active', isAnnual);
 
-        priceValues.forEach(el => {
+        document.querySelectorAll('.pricing-value').forEach(el => {
             const newVal = el.dataset[isAnnual ? 'annual' : 'monthly'];
             if (newVal === 'FREE' || newVal === 'Custom') return;
-
             el.classList.add('changing');
             setTimeout(() => {
                 el.textContent = newVal;
@@ -484,7 +516,7 @@ if (pricingToggle) {
             }, 180);
         });
 
-        pricePeriods.forEach(el => {
+        document.querySelectorAll('.pricing-period[data-annual-total]').forEach(el => {
             if (isAnnual) {
                 const total = el.dataset.annualTotal;
                 el.innerHTML = 'ribu / bulan <span class="period-yearly">(Rp' + total + ' / tahun)</span>';
