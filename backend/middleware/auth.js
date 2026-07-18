@@ -6,7 +6,8 @@ const adminAuth = (req, res, next) => {
   if (!token) return res.status(401).json({ error: 'Akses ditolak. Silakan login terlebih dahulu.' });
 
   try {
-    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    const secret = process.env.JWT_SECRET || 'rullzye-store-default-secret-key';
+    const verified = jwt.verify(token, secret);
     if (verified.role !== 'admin') return res.status(403).json({ error: 'Akses khusus admin.' });
     req.user = verified;
     next();
@@ -20,7 +21,8 @@ const customerAuth = (req, res, next) => {
   if (!token) return res.status(401).json({ error: 'Akses ditolak. Silakan login terlebih dahulu.' });
 
   try {
-    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    const secret = process.env.JWT_SECRET || 'rullzye-store-default-secret-key';
+    const verified = jwt.verify(token, secret);
     req.user = verified;
     next();
   } catch (err) {
@@ -31,7 +33,10 @@ const customerAuth = (req, res, next) => {
 const optionalAuth = (req, res, next) => {
   const token = req.header('Authorization')?.replace('Bearer ', '');
   if (token) {
-    try { req.user = jwt.verify(token, process.env.JWT_SECRET); } catch (e) {}
+    try {
+      const secret = process.env.JWT_SECRET || 'rullzye-store-default-secret-key';
+      req.user = jwt.verify(token, secret);
+    } catch (e) {}
   }
   next();
 };
