@@ -3,7 +3,7 @@ services:
     name: rullzye-store-web
     env: node
     region: singapore
-    buildCommand: cd backend && npm install
+    buildCommand: cd backend && npm install && cd ..
     startCommand: cd backend && node server.js
     healthCheckPath: /api
     envVars:
@@ -24,7 +24,7 @@ services:
       - key: ADMIN_EMAIL
         value: admin@rullzyestore.com
       - key: ADMIN_PASSWORD
-        generateValue: true
+        value: admin123
       - key: CORS_ORIGIN
         value: "*"
 

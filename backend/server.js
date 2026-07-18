@@ -87,16 +87,12 @@ async function start() {
     await sequelize.sync({ alter: process.env.NODE_ENV !== 'production' });
     console.log('Models synchronized.');
 
-    // Create default admin if not exists
-    const settingCount = await Setting.count();
-    if (settingCount === 0) {
-      await Setting.bulkCreate([
-        { key: 'site_name', value: 'Rullzye Store Web Development', group: 'general' },
-        { key: 'site_tagline', value: 'Kami membantu bisnis berkembang melalui website modern, cepat, aman, dan profesional.', group: 'general' },
-        { key: 'wa_number', value: '628XXX', group: 'contact' },
-        { key: 'admin_email', value: process.env.ADMIN_EMAIL || 'admin@rullzyestore.com', group: 'general' },
-      ]);
-      console.log('Default settings created.');
+    // Auto-seed if database is empty
+    const serviceCount = await Service.count();
+    if (serviceCount === 0) {
+      console.log('Database empty, running seed...');
+      await require('./scripts/seed')();
+      console.log('Auto-seed completed.');
     }
 
     app.listen(PORT, '0.0.0.0', () => {

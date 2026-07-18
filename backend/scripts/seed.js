@@ -67,32 +67,38 @@ const pricings = [
   { name: 'Enterprise', priceMonthly: 'Custom', priceAnnual: 'Custom', currency: '', period: 'Hubungi Kami', isFeatured: false, popularLabel: '', buttonText: 'Hubungi Kami', features: ['Sistem Besar', 'Custom Fitur', 'Maintenance', 'Support Prioritas'], sortOrder: 4 },
 ];
 
-async function seed() {
+async function seed(options = {}) {
+  const { force = false, exit = true } = options;
   try {
-    await sequelize.sync({ force: true });
-    console.log('Database synced (force).');
+    if (force) {
+      await sequelize.sync({ force: true });
+      console.log('Database synced (force).');
+    }
 
-    await Service.bulkCreate(services);
+    await Service.bulkCreate(services, { ignoreDuplicates: true });
     console.log(`Seeded ${services.length} services.`);
 
-    await Portfolio.bulkCreate(portfolios);
+    await Portfolio.bulkCreate(portfolios, { ignoreDuplicates: true });
     console.log(`Seeded ${portfolios.length} portfolios.`);
 
-    await Testimonial.bulkCreate(testimonials);
+    await Testimonial.bulkCreate(testimonials, { ignoreDuplicates: true });
     console.log(`Seeded ${testimonials.length} testimonials.`);
 
-    await Faq.bulkCreate(faqs);
+    await Faq.bulkCreate(faqs, { ignoreDuplicates: true });
     console.log(`Seeded ${faqs.length} FAQs.`);
 
-    await Pricing.bulkCreate(pricings);
+    await Pricing.bulkCreate(pricings, { ignoreDuplicates: true });
     console.log(`Seeded ${pricings.length} pricings.`);
 
     console.log('Seed completed successfully!');
-    process.exit(0);
+    if (exit) process.exit(0);
   } catch (err) {
     console.error('Seed failed:', err);
-    process.exit(1);
+    if (exit) process.exit(1);
+    throw err;
   }
 }
 
-seed();
+module.exports = seed;
+
+if (require.main === module) seed({ force: true });
