@@ -34,7 +34,7 @@ const API = {
 
   logout() {
     localStorage.removeItem('admin_token');
-    window.location.href = '../customer/login.html';
+    window.location.href = '../index.html';
   },
 
   formatCurrency(val) {
