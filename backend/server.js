@@ -78,11 +78,25 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Terjadi kesalahan server' });
 });
 
+// Retry DB connection (handle Render race condition where DB isn't ready yet)
+async function waitForDb(retries = 30, delay = 3000) {
+  for (let i = 1; i <= retries; i++) {
+    try {
+      await sequelize.authenticate();
+      console.log('Database connected successfully.');
+      return;
+    } catch (err) {
+      console.log(`DB connection attempt ${i}/${retries} failed: ${err.code || err.message}`);
+      if (i === retries) throw err;
+      await new Promise(r => setTimeout(r, delay));
+    }
+  }
+}
+
 // Start server
 async function start() {
   try {
-    await sequelize.authenticate();
-    console.log('Database connected successfully.');
+    await waitForDb();
 
     await sequelize.sync({ alter: process.env.NODE_ENV !== 'production' });
     console.log('Models synchronized.');
