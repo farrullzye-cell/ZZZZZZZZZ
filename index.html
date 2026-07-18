@@ -1,43 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantix - AI-Powered Analytics</title>
+    <title>Rullzye Store Web Development - Jasa Pembuatan Website Profesional</title>
+    <meta name="description" content="Rullzye Store melayani jasa pembuatan Landing Page, Company Profile, Toko Online, Dashboard Admin, Website PPOB, dan sistem digital profesional.">
+    <meta name="keywords" content="jasa pembuatan website, landing page, company profile, toko online, web development, rullzye store">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rullzyestore.com/">
+    <meta property="og:title" content="Rullzye Store Web Development - Jasa Pembuatan Website Profesional">
+    <meta property="og:description" content="Kami membantu bisnis berkembang melalui website modern, cepat, aman, dan profesional.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rullzyestore.com/">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="templatemo-quantix-style.css">
-<!--
-
-TemplateMo 614 Quantix SaaS
-
-https://templatemo.com/tm-614-quantix-saas
-
--->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">Rullzye Store</div>
+        <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/628XXX" target="_blank" rel="noopener" class="floating-wa" aria-label="WhatsApp">
+        <span class="wa-pulse"></span>
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
 
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="#" class="nav-brand">
-                <span class="brand-icon">Q</span>
-                Quantix
+            <a href="#hero" class="nav-brand">
+                <span class="brand-icon">R</span>
+                <span class="brand-text">Rullzye Store <small>Web Development</small></span>
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#" onclick="return false;">Docs</a></li>
-                <li><a href="templates.html">Templates</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#harga">Harga</a></li>
+                <li><a href="#proses">Proses</a></li>
+                <li><a href="#testimoni">Testimoni</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#kontak">Kontak</a></li>
                 <li class="nav-mobile-actions">
-                    <a href="#" class="btn btn-ghost" onclick="return false;">Log in</a>
-                    <a href="#" class="btn btn-primary" onclick="return false;">Start Free Trial</a>
+                    <a href="https://wa.me/628XXX" class="btn btn-emerald" target="_blank">Konsultasi Gratis</a>
                 </li>
             </ul>
             <div class="nav-actions">
-                <a href="#" class="btn btn-ghost" onclick="return false;">Log in</a>
-                <a href="#" class="btn btn-primary" onclick="return false;">Start Free Trial</a>
+                <a href="customer/login.html" class="btn btn-ghost">Customer Area</a>
+                <a href="https://wa.me/628XXX" class="btn btn-primary" target="_blank">Konsultasi Gratis</a>
             </div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
@@ -46,479 +69,736 @@ https://templatemo.com/tm-614-quantix-saas
     </nav>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+
         <div class="hero-inner container">
             <div class="hero-content">
                 <div class="hero-badge">
                     <span class="badge-dot"></span>
-                    Version 2.0 is Live
+                    Premium Web Development Agency
                 </div>
-                <h1>Analytics that<br><span class="gradient-text">move the needle</span></h1>
-                <p class="hero-desc">Ship faster with real-time product analytics, session replay, and feature flags — all in one platform built for engineering teams.</p>
+                <h1>
+                    Bangun <span class="highlight">Website Profesional</span><br>
+                    untuk <span class="typing-wrap" id="typingText">Bisnis Anda</span>
+                </h1>
+                <p class="hero-desc">
+                    Kami menyediakan jasa pembuatan Landing Page, Company Profile, Toko Online, Dashboard Admin, Website PPOB, Website Premium, Website Custom, dan Sistem Digital sesuai kebutuhan bisnis Anda.
+                </p>
                 <div class="hero-cta">
-                    <a href="#" class="btn btn-primary btn-lg" onclick="return false;">Get Started Free <span class="btn-arrow">&rarr;</span></a>
-                    <a href="#" class="btn btn-secondary btn-lg" onclick="return false;">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                        Watch Demo
-                    </a>
+                    <a href="https://wa.me/628XXX" class="btn btn-primary btn-lg" target="_blank">Konsultasi Gratis <span class="btn-arrow">&rarr;</span></a>
+                    <a href="#portofolio" class="btn btn-secondary btn-lg">Lihat Portofolio</a>
                 </div>
-                <div class="trusted-row">
-                    <p class="trusted-label">Trusted by 2,400+ teams</p>
-                    <div class="trusted-logos">
-                        <span class="trusted-logo"><span class="t-icon"></span> Vercel</span>
-                        <span class="trusted-logo"><span class="t-icon"></span> Linear</span>
-                        <span class="trusted-logo"><span class="t-icon"></span> Raycast</span>
-                        <span class="trusted-logo"><span class="t-icon"></span> Resend</span>
-                        <span class="trusted-logo"><span class="t-icon"></span> Supabase</span>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value" data-target="500" data-suffix="+">0</div>
+                        <div class="hero-stat-label">Project Selesai</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value" data-target="350" data-suffix="+">0</div>
+                        <div class="hero-stat-label">Klien</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value" data-target="99" data-suffix="%">0</div>
+                        <div class="hero-stat-label">Kepuasan</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">24/7</div>
+                        <div class="hero-stat-label">Support</div>
                     </div>
                 </div>
             </div>
 
-            <div class="hero-mockup">
-                <div class="mockup-window">
-                    <div class="mockup-toolbar">
-                        <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            <div class="hero-visual">
+                <div class="hero-glass-card">
+                    <div class="hero-glass-header">
+                        <span class="hero-glass-dot"></span>
+                        <span class="hero-glass-dot"></span>
+                        <span class="hero-glass-dot"></span>
+                        <span class="hero-glass-title">rullzyestore.com</span>
                     </div>
-                    <div class="mockup-body">
-                        <div class="mockup-metric-row">
-                            <div class="mockup-metric">
-                                <div class="mm-label">Page Views</div>
-                                <div class="mm-value">24.8K</div>
-                                <div class="mm-change">+12.3%</div>
-                            </div>
-                            <div class="mockup-metric">
-                                <div class="mm-label">Conversions</div>
-                                <div class="mm-value">1,847</div>
-                                <div class="mm-change">+8.1%</div>
-                            </div>
-                            <div class="mockup-metric">
-                                <div class="mm-label">Bounce Rate</div>
-                                <div class="mm-value">32%</div>
-                                <div class="mm-change">-4.2%</div>
-                            </div>
+                    <div class="hero-glass-metrics">
+                        <div class="hero-glass-metric">
+                            <div class="hgm-label">Performance</div>
+                            <div class="hgm-value">98</div>
+                            <div class="hgm-change">+12%</div>
                         </div>
-                        <div class="mockup-chart">
-                            <div class="mockup-chart-label">Traffic — Last 30 days</div>
-                            <div class="chart-line">
-                                <svg viewBox="0 0 300 60" preserveAspectRatio="none">
-                                    <defs>
-                                        <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="rgba(255,107,107,0.25)"/>
-                                            <stop offset="100%" stop-color="rgba(255,107,107,0)"/>
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M0 50 Q20 45 40 40 T80 30 T120 35 T160 20 T200 25 T240 15 T280 10 T300 5 V60 H0Z" fill="url(#lineGrad)"/>
-                                    <path d="M0 50 Q20 45 40 40 T80 30 T120 35 T160 20 T200 25 T240 15 T280 10 T300 5" fill="none" stroke="#FF6B6B" stroke-width="2"/>
-                                </svg>
-                            </div>
+                        <div class="hero-glass-metric">
+                            <div class="hgm-label">SEO</div>
+                            <div class="hgm-value">96</div>
+                            <div class="hgm-change">+8%</div>
                         </div>
+                        <div class="hero-glass-metric">
+                            <div class="hgm-label">Load Time</div>
+                            <div class="hgm-value">0.8s</div>
+                            <div class="hgm-change">-0.3s</div>
+                        </div>
+                    </div>
+                    <div class="hero-glass-chart">
+                        <div class="hgc-label">Traffic &mdash; Last 30 days</div>
+                        <svg class="hgc-svg" viewBox="0 0 300 50" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="rgba(0,212,255,0.2)"/>
+                                    <stop offset="100%" stop-color="rgba(0,212,255,0)"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M0 40 Q20 35 40 30 T80 25 T120 28 T160 18 T200 22 T240 12 T280 8 T300 3 V50 H0Z" fill="url(#chartGrad)"/>
+                            <path d="M0 40 Q20 35 40 30 T80 25 T120 28 T160 18 T200 22 T240 12 T280 8 T300 3" fill="none" stroke="#00d4ff" stroke-width="2"/>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TABBED FEATURES -->
-    <section class="section features-section" id="features">
+    <!-- LAYANAN -->
+    <section class="section layanan-section" id="layanan">
         <div class="container">
             <div class="section-header fade-up">
-                <p class="section-label">Features</p>
-                <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
-                <p class="section-desc">A complete analytics toolkit that replaces five tools in your stack.</p>
+                <p class="section-label">Layanan</p>
+                <h2 class="section-title">Solusi Digital <span class="gradient-text">Lengkap</span></h2>
+                <p class="section-desc">Kami menyediakan berbagai layanan pembuatan website profesional untuk memenuhi kebutuhan bisnis Anda.</p>
             </div>
 
-            <div class="feature-tabs fade-up" role="tablist">
-                <button class="feature-tab active" data-tab="dashboard" role="tab">Dashboard</button>
-                <button class="feature-tab" data-tab="funnels" role="tab">Funnels</button>
-                <button class="feature-tab" data-tab="sdk" role="tab">SDK</button>
-                <button class="feature-tab" data-tab="replay" role="tab">Session Replay</button>
-                <button class="feature-tab" data-tab="privacy" role="tab">Privacy</button>
-            </div>
-
-            <div class="feature-panels">
-                <!-- Panel 1: Dashboard -->
-                <div class="feature-panel active" data-panel="dashboard">
-                    <div class="feature-text">
-                        <div class="feat-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12 A9 9 0 1 1 12 3"/><path d="M21 3v9h-9"/></svg>
-                        </div>
-                        <h3>Real-Time Dashboard</h3>
-                        <p>Watch your metrics update live with sub-second latency. Custom widgets, drag-and-drop layout, and instant sharing with your team.</p>
-                        <ul class="feature-bullets">
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sub-second data refresh</li>
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Drag-and-drop widgets</li>
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Scheduled email reports</li>
-                        </ul>
-                    </div>
-                    <div class="feature-visual">
-                        <div class="fv-toolbar"><span class="fv-dot"></span><span class="fv-dot"></span><span class="fv-dot"></span></div>
-                        <div class="fv-body">
-                            <div class="dash-metrics">
-                                <div class="dash-metric">
-                                    <div class="dm-label">Active Users</div>
-                                    <div class="dm-val">3,842</div>
-                                    <div class="dm-change up">+12.3%</div>
-                                </div>
-                                <div class="dash-metric">
-                                    <div class="dm-label">Conversion</div>
-                                    <div class="dm-val">12.4%</div>
-                                    <div class="dm-change up">+2.1%</div>
-                                </div>
-                                <div class="dash-metric">
-                                    <div class="dm-label">Churn</div>
-                                    <div class="dm-val">1.8%</div>
-                                    <div class="dm-change down">-0.4%</div>
-                                </div>
-                            </div>
-                            <div class="dash-chart-area">
-                                <div class="dca-title">Revenue — Last 7 days</div>
-                                <svg viewBox="0 0 400 80" preserveAspectRatio="none">
-                                    <defs>
-                                        <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="0%" stop-color="rgba(255,107,107,0.2)"/>
-                                            <stop offset="100%" stop-color="rgba(255,107,107,0)"/>
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M0 60 C40 55 60 40 100 35 S160 30 200 20 S280 25 320 15 S380 10 400 5 V80 H0Z" fill="url(#areaGrad)"/>
-                                    <path d="M0 60 C40 55 60 40 100 35 S160 30 200 20 S280 25 320 15 S380 10 400 5" fill="none" stroke="#FF6B6B" stroke-width="2"/>
-                                    <circle cx="320" cy="15" r="4" fill="#FF6B6B" stroke="#1E1E24" stroke-width="2"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
+            <div class="layanan-grid">
+                <div class="layanan-card fade-up" data-delay="0">
+                    <div class="layanan-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3 class="layanan-name">Landing Page</h3>
+                    <p class="layanan-desc">Halaman promosi produk/jasa dengan desain konversi tinggi dan loading super cepat.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
                 </div>
-
-                <!-- Panel 2: Funnels -->
-                <div class="feature-panel" data-panel="funnels">
-                    <div class="feature-text">
-                        <div class="feat-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
-                        </div>
-                        <h3>Funnel Analytics</h3>
-                        <p>Identify exactly where users drop off and why. Build funnels in seconds and correlate drop-off with user segments.</p>
-                        <ul class="feature-bullets">
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Visual drop-off analysis</li>
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Segment correlation</li>
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Historical comparison</li>
-                        </ul>
-                    </div>
-                    <div class="feature-visual">
-                        <div class="fv-toolbar"><span class="fv-dot"></span><span class="fv-dot"></span><span class="fv-dot"></span></div>
-                        <div class="fv-body">
-                            <div class="funnel-stages">
-                                <div class="funnel-stage">
-                                    <div class="funnel-bar-wrap">
-                                        <div class="funnel-bar-label"><span>Landing Page</span><span>12,480</span></div>
-                                        <div class="funnel-track"><div class="funnel-fill" style="width:100%"></div></div>
-                                    </div>
-                                    <div class="funnel-drop">&mdash;</div>
-                                </div>
-                                <div class="funnel-stage">
-                                    <div class="funnel-bar-wrap">
-                                        <div class="funnel-bar-label"><span>Sign Up Started</span><span>8,736</span></div>
-                                        <div class="funnel-track"><div class="funnel-fill" style="width:70%"></div></div>
-                                    </div>
-                                    <div class="funnel-drop">-30%</div>
-                                </div>
-                                <div class="funnel-stage">
-                                    <div class="funnel-bar-wrap">
-                                        <div class="funnel-bar-label"><span>Email Verified</span><span>6,115</span></div>
-                                        <div class="funnel-track"><div class="funnel-fill amber" style="width:49%"></div></div>
-                                    </div>
-                                    <div class="funnel-drop">-30%</div>
-                                </div>
-                                <div class="funnel-stage">
-                                    <div class="funnel-bar-wrap">
-                                        <div class="funnel-bar-label"><span>Onboarding Done</span><span>3,670</span></div>
-                                        <div class="funnel-track"><div class="funnel-fill amber" style="width:29%"></div></div>
-                                    </div>
-                                    <div class="funnel-drop">-40%</div>
-                                </div>
-                                <div class="funnel-stage">
-                                    <div class="funnel-bar-wrap">
-                                        <div class="funnel-bar-label"><span>First Action</span><span>2,569</span></div>
-                                        <div class="funnel-track"><div class="funnel-fill green" style="width:20.5%"></div></div>
-                                    </div>
-                                    <div class="funnel-drop">-30%</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="layanan-card fade-up" data-delay="100">
+                    <div class="layanan-icon"><i class="fas fa-building"></i></div>
+                    <h3 class="layanan-name">Company Profile</h3>
+                    <p class="layanan-desc">Website profil perusahaan profesional dengan informasi lengkap dan desain elegan.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
                 </div>
-
-                <!-- Panel 3: SDK -->
-                <div class="feature-panel" data-panel="sdk">
-                    <div class="feature-text">
-                        <div class="feat-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        </div>
-                        <h3>One-Line SDK</h3>
-                        <p>Drop in a single script tag or npm package. Auto-capture pageviews, clicks, and custom events out of the box.</p>
-                        <ul class="feature-bullets">
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Under 4KB gzipped</li>
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Zero config autocapture</li>
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> TypeScript-first API</li>
-                        </ul>
-                    </div>
-                    <div class="feature-visual">
-                        <div class="fv-toolbar"><span class="fv-dot"></span><span class="fv-dot"></span><span class="fv-dot"></span></div>
-                        <div class="fv-body">
-                            <div class="code-block">
-                                <span class="c-comment">// Install: npm i @quantix/sdk</span><br><br>
-                                <span class="c-key">import</span> { Quantix } <span class="c-key">from</span> <span class="c-str">'@quantix/sdk'</span><br><br>
-                                <span class="c-key">const</span> qx = <span class="c-key">new</span> <span class="c-fn">Quantix</span>({<br>
-                                &nbsp;&nbsp;apiKey: <span class="c-str">'qx_live_k8x2...'</span>,<br>
-                                &nbsp;&nbsp;autocapture: <span class="c-key">true</span>,<br>
-                                &nbsp;&nbsp;sessionReplay: <span class="c-key">true</span>,<br>
-                                })<br><br>
-                                <span class="c-comment">// Track custom events</span><br>
-                                qx.<span class="c-fn">track</span>(<span class="c-str">'checkout'</span>, {<br>
-                                &nbsp;&nbsp;value: <span class="c-num">49.99</span>,<br>
-                                &nbsp;&nbsp;plan: <span class="c-str">'pro'</span><br>
-                                })
-                            </div>
-                            <div class="code-output">
-                                <div class="co-label">Output</div>
-                                <div class="co-result">
-                                    <span class="pulse-ring"></span>
-                                    Event tracked in 8ms — 200 OK
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="layanan-card fade-up" data-delay="200">
+                    <div class="layanan-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3 class="layanan-name">Website Toko Online</h3>
+                    <p class="layanan-desc">Toko online siap jualan dengan sistem keranjang, checkout, dan payment gateway.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
                 </div>
-
-                <!-- Panel 4: Session Replay -->
-                <div class="feature-panel" data-panel="replay">
-                    <div class="feature-text">
-                        <div class="feat-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                        </div>
-                        <h3>Session Replay</h3>
-                        <p>See exactly what your users see. Replay sessions with pixel-perfect accuracy and zero performance impact on your app.</p>
-                        <ul class="feature-bullets">
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Pixel-perfect playback</li>
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Console log capture</li>
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Rage click detection</li>
-                        </ul>
-                    </div>
-                    <div class="feature-visual">
-                        <div class="fv-toolbar"><span class="fv-dot"></span><span class="fv-dot"></span><span class="fv-dot"></span></div>
-                        <div class="fv-body">
-                            <div class="replay-ui">
-                                <div class="replay-header">
-                                    <span class="rh-left"><span class="live-dot"></span> Recording</span>
-                                    <span class="rh-time">02:34 / 05:12</span>
-                                </div>
-                                <div class="replay-viewport">
-                                    <div class="replay-page">
-                                        <div class="rp-nav"></div>
-                                        <div class="rp-hero-block"></div>
-                                        <div class="rp-hero-block"></div>
-                                        <div class="rp-hero-block"></div>
-                                        <span class="rp-btn-block"></span>
-                                        <div class="rp-grid">
-                                            <div class="rp-card"></div>
-                                            <div class="rp-card"></div>
-                                            <div class="rp-card"></div>
-                                        </div>
-                                    </div>
-                                    <div class="replay-cursor"></div>
-                                </div>
-                                <div class="replay-timeline">
-                                    <span class="rt-play">
-                                        <svg width="8" height="8" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                                    </span>
-                                    <div class="rt-track"><div class="rt-progress"></div></div>
-                                </div>
-                            </div>
-                            <div class="replay-events">
-                                <span class="replay-event-tag"><span class="re-dot" style="background:var(--accent)"></span> click</span>
-                                <span class="replay-event-tag"><span class="re-dot" style="background:var(--amber)"></span> scroll</span>
-                                <span class="replay-event-tag"><span class="re-dot" style="background:var(--rose)"></span> rage_click</span>
-                                <span class="replay-event-tag"><span class="re-dot" style="background:var(--green)"></span> input</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="layanan-card fade-up" data-delay="300">
+                    <div class="layanan-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3 class="layanan-name">Dashboard Admin</h3>
+                    <p class="layanan-desc">Panel kontrol admin modern dengan grafik real-time dan manajemen data lengkap.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
                 </div>
-
-                <!-- Panel 5: Privacy -->
-                <div class="feature-panel" data-panel="privacy">
-                    <div class="feature-text">
-                        <div class="feat-icon">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                        </div>
-                        <h3>Privacy First</h3>
-                        <p>GDPR and CCPA compliant out of the box. Cookieless tracking, automatic PII masking, and EU hosting available.</p>
-                        <ul class="feature-bullets">
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> No cookie banners needed</li>
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> EU data residency</li>
-                            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SOC 2 Type II certified</li>
-                        </ul>
-                    </div>
-                    <div class="feature-visual">
-                        <div class="fv-toolbar"><span class="fv-dot"></span><span class="fv-dot"></span><span class="fv-dot"></span></div>
-                        <div class="fv-body">
-                            <div class="privacy-grid">
-                                <div class="privacy-card">
-                                    <div class="pc-icon">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                    </div>
-                                    <h4>GDPR Compliant</h4>
-                                    <p>Full compliance with European data regulations</p>
-                                </div>
-                                <div class="privacy-card">
-                                    <div class="pc-icon">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    </div>
-                                    <h4>No Cookies</h4>
-                                    <p>Cookieless tracking — no annoying banners</p>
-                                </div>
-                                <div class="privacy-card">
-                                    <div class="pc-icon">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                                    </div>
-                                    <h4>SOC 2 Type II</h4>
-                                    <p>Enterprise-grade security certification</p>
-                                </div>
-                                <div class="privacy-card">
-                                    <div class="pc-icon">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                                    </div>
-                                    <h4>EU Hosting</h4>
-                                    <p>Data residency in Frankfurt, Germany</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="layanan-card fade-up" data-delay="0">
+                    <div class="layanan-icon"><i class="fas fa-credit-card"></i></div>
+                    <h3 class="layanan-name">Website PPOB</h3>
+                    <p class="layanan-desc">Platform pembayaran dan tagihan online dengan sistem multi-payment.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
+                </div>
+                <div class="layanan-card fade-up" data-delay="100">
+                    <div class="layanan-icon"><i class="fas fa-crown"></i></div>
+                    <h3 class="layanan-name">Website Premium</h3>
+                    <p class="layanan-desc">Website dengan desain eksklusif, animasi premium, dan fitur lengkap.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
+                </div>
+                <div class="layanan-card fade-up" data-delay="200">
+                    <div class="layanan-icon"><i class="fas fa-users"></i></div>
+                    <h3 class="layanan-name">Website Membership</h3>
+                    <p class="layanan-desc">Sistem keanggotaan dengan login, level akses, dan konten eksklusif.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
+                </div>
+                <div class="layanan-card fade-up" data-delay="300">
+                    <div class="layanan-icon"><i class="fas fa-video"></i></div>
+                    <h3 class="layanan-name">Website Streaming</h3>
+                    <p class="layanan-desc">Platform streaming video dengan player kustom dan manajemen konten.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
+                </div>
+                <div class="layanan-card fade-up" data-delay="0">
+                    <div class="layanan-icon"><i class="fas fa-car"></i></div>
+                    <h3 class="layanan-name">Website Rental</h3>
+                    <p class="layanan-desc">Sistem rental kendaraan/alat dengan kalender booking dan invoice otomatis.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
+                </div>
+                <div class="layanan-card fade-up" data-delay="100">
+                    <div class="layanan-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3 class="layanan-name">Website Booking</h3>
+                    <p class="layanan-desc">Sistem reservasi online untuk jadwal layanan, meeting, atau event.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
+                </div>
+                <div class="layanan-card fade-up" data-delay="200">
+                    <div class="layanan-icon"><i class="fas fa-boxes"></i></div>
+                    <h3 class="layanan-name">Sistem Inventori</h3>
+                    <p class="layanan-desc">Manajemen stok barang dengan laporan masuk-keluar dan notifikasi stok minim.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
+                </div>
+                <div class="layanan-card fade-up" data-delay="300">
+                    <div class="layanan-icon"><i class="fas fa-school"></i></div>
+                    <h3 class="layanan-name">Website Sekolah</h3>
+                    <p class="layanan-desc">Portal sekolah dengan informasi akademik, jadwal, dan pengumuman terbaru.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
+                </div>
+                <div class="layanan-card fade-up" data-delay="0">
+                    <div class="layanan-icon"><i class="fas fa-hospital-alt"></i></div>
+                    <h3 class="layanan-name">Website Klinik</h3>
+                    <p class="layanan-desc">Sistem informasi klinik dengan booking dokter, rekam medis, dan jadwal.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
+                </div>
+                <div class="layanan-card fade-up" data-delay="100">
+                    <div class="layanan-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="layanan-name">Website Custom</h3>
+                    <p class="layanan-desc">Website dengan fitur kustom sesuai kebutuhan spesifik bisnis Anda.</p>
+                    <a href="#" class="layanan-link">Pelajari <span>&rarr;</span></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats-strip">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item fade-up">
-                    <div class="stat-number" data-target="50" data-suffix="M+">0</div>
-                    <div class="stat-label">Events tracked daily</div>
-                </div>
-                <div class="stat-item fade-up">
-                    <div class="stat-number" data-target="99.9" data-suffix="%" data-decimal="1">0</div>
-                    <div class="stat-label">Uptime SLA</div>
-                </div>
-                <div class="stat-item fade-up">
-                    <div class="stat-number" data-target="2400" data-suffix="+" data-comma="true">0</div>
-                    <div class="stat-label">Teams worldwide</div>
-                </div>
-                <div class="stat-item fade-up">
-                    <div class="stat-number" data-target="50" data-prefix="<" data-suffix="ms">0</div>
-                    <div class="stat-label">Query response time</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRICING -->
-    <section class="section pricing-section" id="pricing">
+    <!-- PORTOFOLIO -->
+    <section class="section portfolio-section" id="portofolio">
         <div class="container">
             <div class="section-header fade-up">
-                <p class="section-label">Pricing</p>
-                <h2 class="section-title">Start free. Scale as you grow.</h2>
-                <p class="section-desc">No credit card required. Upgrade, downgrade, or cancel anytime.</p>
+                <p class="section-label">Portofolio</p>
+                <h2 class="section-title">Karya <span class="gradient-text">Terbaik</span> Kami</h2>
+                <p class="section-desc">Beberapa project website yang telah kami kerjakan untuk berbagai klien.</p>
+            </div>
+
+            <div class="portfolio-filter fade-up">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="landing">Landing Page</button>
+                <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+                <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+                <button class="filter-btn" data-filter="ppob">PPOB</button>
+                <button class="filter-btn" data-filter="membership">Membership</button>
+                <button class="filter-btn" data-filter="admin">Admin Panel</button>
+            </div>
+
+            <div class="portfolio-grid" id="portfolioGrid">
+                <div class="portfolio-card fade-up" data-category="landing">
+                    <div class="portfolio-thumb">
+                        <img src="https://placehold.co/600x400/1a1a28/00d4ff?text=Landing+Page+Pro" alt="Landing Page Project" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary">Preview</a>
+                            <a href="#" class="btn btn-secondary">Detail</a>
+                        </div>
+                        <span class="portfolio-tag">Landing Page</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-name">StartupTech Landing</h3>
+                        <p class="portfolio-client">PT Startup Technology</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-up" data-category="dashboard">
+                    <div class="portfolio-thumb">
+                        <img src="https://placehold.co/600x400/1a1a28/0ea5e9?text=Dashboard+Admin" alt="Dashboard Admin" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary">Preview</a>
+                            <a href="#" class="btn btn-secondary">Detail</a>
+                        </div>
+                        <span class="portfolio-tag">Dashboard</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-name">Admin Panel Pro</h3>
+                        <p class="portfolio-client">CV Digital Solusi</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-up" data-category="ecommerce">
+                    <div class="portfolio-thumb">
+                        <img src="https://placehold.co/600x400/1a1a28/10b981?text=Toko+Online" alt="Toko Online" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary">Preview</a>
+                            <a href="#" class="btn btn-secondary">Detail</a>
+                        </div>
+                        <span class="portfolio-tag">E-Commerce</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-name">FashionStore Online</h3>
+                        <p class="portfolio-client">Toko Fashion Bandung</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-up" data-category="ppob">
+                    <div class="portfolio-thumb">
+                        <img src="https://placehold.co/600x400/1a1a28/00d4ff?text=PPOB+System" alt="PPOB System" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary">Preview</a>
+                            <a href="#" class="btn btn-secondary">Detail</a>
+                        </div>
+                        <span class="portfolio-tag">PPOB</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-name">BayarGampang PPOB</h3>
+                        <p class="portfolio-client">PT Fintech Nusantara</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-up" data-category="membership">
+                    <div class="portfolio-thumb">
+                        <img src="https://placehold.co/600x400/1a1a28/0ea5e9?text=Membership" alt="Membership" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary">Preview</a>
+                            <a href="#" class="btn btn-secondary">Detail</a>
+                        </div>
+                        <span class="portfolio-tag">Membership</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-name">PremiumClub Member</h3>
+                        <p class="portfolio-client">Komunitas Premium</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card fade-up" data-category="admin">
+                    <div class="portfolio-thumb">
+                        <img src="https://placehold.co/600x400/1a1a28/10b981?text=Admin+Panel" alt="Admin Panel" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="btn btn-primary">Preview</a>
+                            <a href="#" class="btn btn-secondary">Detail</a>
+                        </div>
+                        <span class="portfolio-tag">Admin Panel</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-name">Inventory Manager</h3>
+                        <p class="portfolio-client">PT Logistik Maju</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAKET HARGA -->
+    <section class="section pricing-section" id="harga">
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-label">Harga</p>
+                <h2 class="section-title">Paket <span class="gradient-text">Harga</span> Terbaik</h2>
+                <p class="section-desc">Pilih paket yang sesuai dengan kebutuhan website Anda. Dapatkan konsultasi gratis terlebih dahulu.</p>
             </div>
 
             <div class="pricing-toggle-wrap fade-up">
-                <span class="pricing-toggle-label active" id="monthlyLabel">Monthly</span>
-                <button class="pricing-toggle" id="pricingToggle" aria-label="Toggle pricing period"></button>
-                <span class="pricing-toggle-label" id="annualLabel">Annually</span>
-                <span class="pricing-save">Save 30%</span>
+                <span class="pricing-toggle-label active" id="monthlyLabel">Sekali Bayar</span>
+                <button class="pricing-toggle" id="pricingToggle" aria-label="Toggle pricing"></button>
+                <span class="pricing-toggle-label" id="annualLabel">Cicil</span>
+                <span class="pricing-save">Hemat 20%</span>
             </div>
 
             <div class="pricing-grid">
-                <!-- Starter: FREE -->
                 <div class="pricing-card fade-up">
                     <div class="pricing-plan-name">Starter</div>
                     <div class="pricing-amount">
-                        <span class="pricing-value free-label" data-monthly="FREE" data-annual="FREE">FREE</span>
+                        <span class="pricing-currency">Rp</span>
+                        <span class="pricing-value" data-monthly="499" data-annual="399">499</span>
                     </div>
-                    <div class="pricing-period">Free forever</div>
-                    <a href="#" class="btn btn-secondary" onclick="return false;">Get Started</a>
+                    <div class="pricing-period" data-monthly="ribu / sekali" data-annual-total="4.788">ribu / sekali</div>
+                    <a href="https://wa.me/628XXX" class="btn btn-secondary" target="_blank">Pilih Paket</a>
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Up to 10K events/mo</li>
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 1 project</li>
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Core analytics</li>
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Community support</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Landing Page</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Responsive Design</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SEO Basic</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Free Domain (.my.id)</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Free SSL</li>
                     </ul>
                 </div>
 
-                <!-- Pro: $25 / $17.50 -->
                 <div class="pricing-card featured fade-up">
-                    <span class="pricing-popular">Most Popular</span>
-                    <div class="pricing-plan-name">Pro</div>
+                    <span class="pricing-popular">Terpopuler</span>
+                    <div class="pricing-plan-name">Professional</div>
                     <div class="pricing-amount">
-                        <span class="pricing-currency">$</span>
-                        <span class="pricing-value" data-monthly="25" data-annual="17.50">25</span>
+                        <span class="pricing-currency">Rp</span>
+                        <span class="pricing-value" data-monthly="1.500" data-annual="1.200">1.500</span>
                     </div>
-                    <div class="pricing-period" data-monthly="per month" data-annual-total="210">per month</div>
-                    <a href="#" class="btn btn-primary" onclick="return false;">Start Free Trial</a>
+                    <div class="pricing-period" data-monthly="ribu / sekali" data-annual-total="14.400">ribu / sekali</div>
+                    <a href="https://wa.me/628XXX" class="btn btn-primary" target="_blank">Pilih Paket</a>
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Up to 1M events/mo</li>
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Unlimited projects</li>
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Session replay</li>
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Feature flags &amp; A/B</li>
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Dashboard Admin</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Login System</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Database MySQL</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Hosting + Domain</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SEO Optimasi</li>
                     </ul>
                 </div>
 
-                <!-- Scale: $120 / $84 -->
                 <div class="pricing-card fade-up">
-                    <div class="pricing-plan-name">Scale</div>
+                    <div class="pricing-plan-name">Business</div>
                     <div class="pricing-amount">
-                        <span class="pricing-currency">$</span>
-                        <span class="pricing-value" data-monthly="120" data-annual="84">120</span>
+                        <span class="pricing-currency">Rp</span>
+                        <span class="pricing-value" data-monthly="3.500" data-annual="2.800">3.500</span>
                     </div>
-                    <div class="pricing-period" data-monthly="per month" data-annual-total="1,008">per month</div>
-                    <a href="#" class="btn btn-secondary" onclick="return false;">Contact Sales</a>
+                    <div class="pricing-period" data-monthly="ribu / sekali" data-annual-total="33.600">ribu / sekali</div>
+                    <a href="https://wa.me/628XXX" class="btn btn-secondary" target="_blank">Pilih Paket</a>
                     <div class="pricing-divider"></div>
                     <ul class="pricing-features">
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Unlimited events</li>
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SSO &amp; SAML</li>
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Custom retention</li>
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Dedicated CSM</li>
-                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SLA guarantee</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Website Custom</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Payment Gateway</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> API Integration</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> QRIS Payment</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Member Area</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Unlimited Page</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card fade-up">
+                    <div class="pricing-plan-name">Enterprise</div>
+                    <div class="pricing-amount">
+                        <span class="pricing-value free-label" data-monthly="Custom" data-annual="Custom">Custom</span>
+                    </div>
+                    <div class="pricing-period">Hubungi Kami</div>
+                    <a href="https://wa.me/628XXX" class="btn btn-emerald" target="_blank">Hubungi Kami</a>
+                    <div class="pricing-divider"></div>
+                    <ul class="pricing-features">
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sistem Besar</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Custom Fitur</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Maintenance</li>
+                        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Support Prioritas</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SUBSCRIBE -->
+    <!-- PROSES PEMBUATAN -->
+    <section class="section proses-section" id="proses">
+        <div class="section-bg-glow"></div>
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-label">Proses</p>
+                <h2 class="section-title">Bagaimana <span class="gradient-text">Kami Bekerja</span></h2>
+                <p class="section-desc">Proses pembuatan website yang transparan dan profesional dari awal hingga akhir.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-step">Langkah 1</div>
+                        <h3 class="timeline-title">Konsultasi</h3>
+                        <p class="timeline-desc">Diskusikan kebutuhan, tujuan, dan visi website Anda bersama tim kami.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-step">Langkah 2</div>
+                        <h3 class="timeline-title">Analisa Kebutuhan</h3>
+                        <p class="timeline-desc">Kami menganalisa fitur, desain, dan teknologi yang tepat untuk project Anda.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-step">Langkah 3</div>
+                        <h3 class="timeline-title">Desain</h3>
+                        <p class="timeline-desc">Pembuatan wireframe dan desain UI/UX modern sesuai branding Anda.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-step">Langkah 4</div>
+                        <h3 class="timeline-title">Development</h3>
+                        <p class="timeline-desc">Tim developer kami membangun website dengan kode berkualitas tinggi.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-step">Langkah 5</div>
+                        <h3 class="timeline-title">Testing</h3>
+                        <p class="timeline-desc">Pengujian menyeluruh untuk memastikan semua fitur berfungsi sempurna.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-step">Langkah 6</div>
+                        <h3 class="timeline-title">Launching</h3>
+                        <p class="timeline-desc">Website siap diluncurkan dan dapat diakses oleh publik.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-step">Langkah 7</div>
+                        <h3 class="timeline-title">Maintenance</h3>
+                        <p class="timeline-desc">Dukungan berkelanjutan dan pemeliharaan website secara berkala.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section class="section keunggulan-section" id="keunggulan">
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-label">Keunggulan</p>
+                <h2 class="section-title">Kenapa Pilih <span class="gradient-text">Kami?</span></h2>
+                <p class="section-desc">Kami berkomitmen memberikan hasil terbaik untuk setiap project website.</p>
+            </div>
+
+            <div class="keunggulan-grid">
+                <div class="keunggulan-card fade-up">
+                    <div class="keunggulan-icon"><i class="fas fa-bolt"></i></div>
+                    <h3 class="keunggulan-title">Loading Super Cepat</h3>
+                </div>
+                <div class="keunggulan-card fade-up">
+                    <div class="keunggulan-icon"><i class="fas fa-search"></i></div>
+                    <h3 class="keunggulan-title">SEO Friendly</h3>
+                </div>
+                <div class="keunggulan-card fade-up">
+                    <div class="keunggulan-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="keunggulan-title">Responsive</h3>
+                </div>
+                <div class="keunggulan-card fade-up">
+                    <div class="keunggulan-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="keunggulan-title">Keamanan Tinggi</h3>
+                </div>
+                <div class="keunggulan-card fade-up">
+                    <div class="keunggulan-icon"><i class="fas fa-lock"></i></div>
+                    <h3 class="keunggulan-title">Free SSL</h3>
+                </div>
+                <div class="keunggulan-card fade-up">
+                    <div class="keunggulan-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="keunggulan-title">Source Code Full</h3>
+                </div>
+                <div class="keunggulan-card fade-up">
+                    <div class="keunggulan-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3 class="keunggulan-title">UI Modern</h3>
+                </div>
+                <div class="keunggulan-card fade-up">
+                    <div class="keunggulan-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="keunggulan-title">Support 24 Jam</h3>
+                </div>
+                <div class="keunggulan-card fade-up">
+                    <div class="keunggulan-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3 class="keunggulan-title">Gratis Revisi</h3>
+                </div>
+                <div class="keunggulan-card fade-up">
+                    <div class="keunggulan-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="keunggulan-title">Optimasi Google</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section class="section testimoni-section" id="testimoni">
+        <div class="section-bg-glow"></div>
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-label">Testimoni</p>
+                <h2 class="section-title">Apa Kata <span class="gradient-text">Klien</span> Kami</h2>
+                <p class="section-desc">Kepercayaan dan kepuasan klien adalah prioritas utama kami.</p>
+            </div>
+
+            <div class="testimoni-slider fade-up" id="testimoniSlider">
+                <div class="testimoni-track" id="testimoniTrack">
+                    <div class="testimoni-card">
+                        <div class="testimoni-avatar">A</div>
+                        <div class="testimoni-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="testimoni-text">"Pelayanan sangat professional! Website yang dibuat sesuai dengan keinginan saya. Loading cepat dan desainnya modern banget. Highly recommended!"</p>
+                        <div class="testimoni-name">Andi Pratama</div>
+                        <div class="testimoni-role">CEO StartupTech</div>
+                    </div>
+
+                    <div class="testimoni-card">
+                        <div class="testimoni-avatar">S</div>
+                        <div class="testimoni-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="testimoni-text">"Hasilnya melebihi ekspektasi! Dashboard admin yang dibuat sangat rapi dan fungsional. Tim Rullzye Store sangat responsif dan membantu."</p>
+                        <div class="testimoni-name">Siti Rahmawati</div>
+                        <div class="testimoni-role">Owner FashionStore</div>
+                    </div>
+
+                    <div class="testimoni-card">
+                        <div class="testimoni-avatar">B</div>
+                        <div class="testimoni-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="testimoni-text">"Proses pengerjaan cepat dan komunikasi selalu lancar. Website PPOB yang dibuat sangat membantu bisnis saya. Mantab!"</p>
+                        <div class="testimoni-name">Bambang Susilo</div>
+                        <div class="testimoni-role">Owner PPOB Mart</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimoni-nav">
+                <button id="prevTestimoni" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <button id="nextTestimoni" aria-label="Next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+            </div>
+            <div class="testimoni-dots" id="testimoniDots"></div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-label">FAQ</p>
+                <h2 class="section-title">Pertanyaan <span class="gradient-text">Umum</span></h2>
+                <p class="section-desc">Jawaban atas pertanyaan yang sering diajukan tentang layanan kami.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Berapa lama waktu pengerjaan website?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    </div>
+                    <div class="faq-answer"><p>Waktu pengerjaan tergantung pada kompleksitas project. Landing Page biasanya 3-7 hari, Company Profile 5-10 hari, dan website kompleks 2-4 minggu. Kami akan memberikan estimasi waktu yang jelas setelah konsultasi.</p></div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Apakah saya mendapatkan source code website?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    </div>
+                    <div class="faq-answer"><p>Ya, Anda mendapatkan full source code website beserta database (jika ada). Semua hak kepemilikan source code sepenuhnya milik Anda.</p></div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Apakah bisa melakukan revisi?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    </div>
+                    <div class="faq-answer"><p>Tentu! Kami memberikan gratis revisi sebanyak 2 kali untuk memastikan hasil sesuai keinginan Anda. Revisi tambahan dapat dilakukan dengan biaya terjangkau.</p></div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Apakah bisa request fitur tambahan?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    </div>
+                    <div class="faq-answer"><p>Bisa. Kami menerima request fitur tambahan di luar paket. Tim kami akan menganalisa dan memberikan penawaran harga sesuai kompleksitas fitur yang diminta.</p></div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Apakah ada layanan maintenance?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    </div>
+                    <div class="faq-answer"><p>Ya, kami menyediakan paket maintenance bulanan yang mencakup update keamanan, backup database, monitoring performa, dan support teknis.</p></div>
+                </div>
+
+                <div class="faq-item fade-up">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Apakah bisa pembayaran DP?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                    </div>
+                    <div class="faq-answer"><p>Tentu. Sistem pembayaran kami menggunakan DP 50% di awal dan 50% setelah selesai. Untuk project besar dapat diangsur sesuai kesepakatan.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="kontak">
+        <div class="container">
+            <div class="cta-inner fade-up">
+                <h2 class="section-title">Siap Memiliki <span class="gradient-text">Website Profesional?</span></h2>
+                <p class="section-desc">Hubungi kami sekarang dan konsultasikan kebutuhan website Anda secara GRATIS. Tim kami siap membantu Anda dari konsultasi hingga launching.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/628XXX" class="btn btn-primary btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> Hubungi WhatsApp</a>
+                    <a href="customer/register.html" class="btn btn-secondary btn-lg">Daftar Customer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="section subscribe-section" id="blog">
+        <div class="container">
+            <div class="section-header fade-up">
+                <p class="section-label">Blog</p>
+                <h2 class="section-title">Artikel <span class="gradient-text">Terbaru</span></h2>
+                <p class="section-desc">Tips, trik, dan insight seputar web development dan digital marketing.</p>
+            </div>
+
+            <div class="blog-grid">
+                <a href="blog/" class="blog-card fade-up">
+                    <div class="blog-thumb">
+                        <img src="https://placehold.co/600x400/1a1a28/00d4ff?text=Tips+Website" alt="Blog" loading="lazy">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-date">15 Jan 2026 &bull; 3 min read</div>
+                        <h3 class="blog-title">7 Tips Memilih Jasa Pembuatan Website Profesional</h3>
+                        <p class="blog-excerpt">Panduan lengkap memilih vendor pembuatan website yang tepat untuk bisnis Anda.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-user"></i> Admin</span>
+                            <span><i class="far fa-comment"></i> 12 Komentar</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="blog/" class="blog-card fade-up">
+                    <div class="blog-thumb">
+                        <img src="https://placehold.co/600x400/1a1a28/0ea5e9?text=SEO+Tips" alt="Blog" loading="lazy">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-date">10 Jan 2026 &bull; 5 min read</div>
+                        <h3 class="blog-title">Cara Optimasi SEO Website agar Muncul di Halaman Pertama Google</h3>
+                        <p class="blog-excerpt">Strategi SEO terbaru untuk meningkatkan peringkat website bisnis Anda.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-user"></i> Admin</span>
+                            <span><i class="far fa-comment"></i> 8 Komentar</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="blog/" class="blog-card fade-up">
+                    <div class="blog-thumb">
+                        <img src="https://placehold.co/600x400/1a1a28/10b981?text=UI+UX" alt="Blog" loading="lazy">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-date">5 Jan 2026 &bull; 4 min read</div>
+                        <h3 class="blog-title">Pentingnya UI/UX Design dalam Meningkatkan Konversi Website</h3>
+                        <p class="blog-excerpt">Bagaimana desain yang baik dapat meningkatkan penjualan hingga 200%.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-user"></i> Admin</span>
+                            <span><i class="far fa-comment"></i> 15 Komentar</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
     <section class="subscribe-section">
         <div class="container">
             <div class="subscribe-inner fade-up">
-                <h2 class="section-title">Stay in the loop</h2>
-                <p class="section-desc">Product updates, engineering insights, and zero spam. Unsubscribe anytime.</p>
-                <div class="subscribe-input-group">
-                    <input type="email" placeholder="you@company.com" autocomplete="email">
-                    <button class="btn btn-primary">Subscribe</button>
-                </div>
+                <h2 class="section-title">Tetap Terhubung</h2>
+                <p class="section-desc">Dapatkan informasi terbaru seputar web development, tips bisnis, dan promo spesial.</p>
+                <form class="subscribe-input-group" id="subscribeForm">
+                    <input type="email" placeholder="email@anda.com" autocomplete="email" required>
+                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                </form>
                 <div class="subscribe-meta">
-                    <span>
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        6,200+ subscribers
-                    </span>
-                    <span>
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        Monthly digest
-                    </span>
-                    <span>
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        Unsubscribe anytime
-                    </span>
+                    <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 500+ Subscribers</span>
+                    <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Weekly Digest</span>
+                    <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Unsubscribe Anytime</span>
                 </div>
             </div>
         </div>
@@ -528,41 +808,50 @@ https://templatemo.com/tm-614-quantix-saas
     <footer class="footer">
         <div class="container">
             <div class="footer-row-links">
-                <a href="#features">Features</a>
+                <a href="#layanan">Layanan</a>
                 <span class="footer-link-dot"></span>
-                <a href="#pricing">Pricing</a>
+                <a href="#portofolio">Portofolio</a>
                 <span class="footer-link-dot"></span>
-                <a href="#" onclick="return false;">Documentation</a>
+                <a href="#harga">Harga</a>
                 <span class="footer-link-dot"></span>
-                <a href="#" onclick="return false;">Blog</a>
+                <a href="#proses">Proses</a>
                 <span class="footer-link-dot"></span>
-                <a href="#" onclick="return false;">Partners</a>
+                <a href="#testimoni">Testimoni</a>
+                <span class="footer-link-dot"></span>
+                <a href="#faq">FAQ</a>
+                <span class="footer-link-dot"></span>
+                <a href="#kontak">Kontak</a>
             </div>
             <div class="footer-row-bottom">
-                <p class="footer-copy">Copyright &copy; 2026 Quantix. Design: <a href="https://templatemo.com" target="_blank" rel="nofollow">TemplateMo</a></p>
+                <p class="footer-copy">Copyright &copy; 2026 <a href="https://rullzyestore.com">Rullzye Store Web Development</a>. All rights reserved.</p>
                 <div class="footer-right">
                     <div class="footer-socials">
-                        <a href="#" aria-label="X" onclick="return false;">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                         </a>
-                        <a href="#" aria-label="GitHub" onclick="return false;">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         </a>
-                        <a href="#" aria-label="LinkedIn" onclick="return false;">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                         </a>
                     </div>
                     <span class="separator"></span>
                     <div class="footer-legal">
-                        <a href="#" onclick="return false;">Privacy</a>
-                        <a href="#" onclick="return false;">Terms</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="templatemo-quantix-script.js"></script>
+    <!-- GSAP & AOS via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+
+    <script src="script.js"></script>
 
 </body>
 </html>

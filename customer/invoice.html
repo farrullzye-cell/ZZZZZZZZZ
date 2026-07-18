@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Invoice - Rullzye Store</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><link rel="stylesheet" href="../style.css"><style>.cust-body{background:var(--deep-bg);min-height:100vh;padding:24px;max-width:700px;margin:0 auto}.back-link{color:var(--text-muted);font-size:14px;transition:var(--transition);display:inline-flex;align-items:center;gap:6px;margin-bottom:20px}.back-link:hover{color:var(--cyan)}.invoice-card{background:var(--surface-1);border:1px solid var(--border-subtle);border-radius:var(--radius);padding:32px;margin-bottom:16px}.invoice-header{display:flex;justify-content:space-between;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border-subtle)}.invoice-title{font-size:20px;font-weight:800;letter-spacing:-0.03em}.invoice-number{font-size:12px;color:var(--text-muted);font-family:'JetBrains Mono',monospace}.invoice-details{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}.invoice-detail-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em}.invoice-detail-value{font-size:14px;font-weight:600;margin-top:2px}.invoice-table{width:100%;border-collapse:collapse;margin-bottom:24px}.invoice-table th{text-align:left;padding:10px 0;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid var(--border-subtle)}.invoice-table td{padding:10px 0;font-size:13px;color:var(--text-secondary);border-bottom:1px solid var(--border-subtle)}.invoice-total{text-align:right;font-size:18px;font-weight:800;margin-top:16px}.invoice-total span{color:var(--cyan)}.invoice-status{padding:4px 12px;border-radius:var(--radius-pill);font-size:11px;font-weight:600;display:inline-block}.invoice-status.paid{background:var(--emerald-soft);color:var(--emerald)}.invoice-status.unpaid{background:rgba(245,158,11,0.1);color:#f59e0b}.pay-btn{display:flex;gap:12px;margin-top:20px;justify-content:center}</style></head><body>
+<div class="cust-body">
+    <a href="dashboard.html" class="back-link"><i class="fas fa-arrow-left"></i> Kembali</a>
+
+    <div class="invoice-card">
+        <div class="invoice-header">
+            <div><div class="invoice-title">INVOICE</div><div class="invoice-number">#INV-RS-001</div></div>
+            <div style="text-align:right"><span class="invoice-status unpaid">Belum Dibayar</span></div>
+        </div>
+
+        <div class="invoice-details">
+            <div><div class="invoice-detail-label">Customer</div><div class="invoice-detail-value">Andi Pratama</div></div>
+            <div><div class="invoice-detail-label">Tanggal</div><div class="invoice-detail-value">15 Jan 2026</div></div>
+            <div><div class="invoice-detail-label">Paket</div><div class="invoice-detail-value">Professional</div></div>
+            <div><div class="invoice-detail-label">Jatuh Tempo</div><div class="invoice-detail-value">15 Feb 2026</div></div>
+        </div>
+
+        <table class="invoice-table">
+            <thead><tr><th>Deskripsi</th><th>Qty</th><th style="text-align:right">Harga</th></tr></thead>
+            <tbody>
+                <tr><td>Paket Professional - Company Profile</td><td>1</td><td style="text-align:right">Rp 1.500.000</td></tr>
+                <tr><td>Domain + Hosting (1 tahun)</td><td>1</td><td style="text-align:right">Rp 350.000</td></tr>
+                <tr><td>SSL Certificate</td><td>1</td><td style="text-align:right">Free</td></tr>
+            </tbody>
+        </table>
+
+        <div class="invoice-total">Total: <span>Rp 1.850.000</span></div>
+
+        <div class="pay-btn">
+            <button class="btn btn-primary" onclick="alert('Fitur pembayaran akan diarahkan ke Payment Gateway.')">Bayar Sekarang</button>
+            <button class="btn btn-secondary" onclick="window.print()">Download PDF</button>
+        </div>
+    </div>
+</div></body></html>

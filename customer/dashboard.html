@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Customer - Rullzye Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .cust-body { background: var(--deep-bg); min-height: 100vh; display: flex; }
+        .cust-sidebar { width: 240px; background: var(--surface-1); border-right: 1px solid var(--border-subtle); position: fixed; top: 0; left: 0; height: 100vh; z-index: 100; padding: 20px 16px; overflow-y: auto; }
+        .cust-sidebar .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border-subtle); }
+        .cust-sidebar .brand-icon { width: 32px; height: 32px; background: linear-gradient(135deg,var(--cyan),var(--emerald)); border-radius: 8px; display: grid; place-items: center; font-size: 14px; font-weight: 800; color: #fff; }
+        .cust-sidebar .brand-text { font-size: 15px; font-weight: 700; }
+        .cust-nav { display: flex; flex-direction: column; gap: 4px; }
+        .cust-nav a { padding: 10px 12px; border-radius: var(--radius-sm); color: var(--text-muted); font-size: 13px; font-weight: 500; transition: var(--transition); display: flex; align-items: center; gap: 10px; }
+        .cust-nav a:hover { background: rgba(255,255,255,0.04); color: var(--text-primary); }
+        .cust-nav a.active { background: var(--cyan-soft); color: var(--cyan); }
+        .cust-nav a i { width: 18px; text-align: center; }
+        .cust-main { margin-left: 240px; flex: 1; padding: 24px; }
+        .cust-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+        .cust-header h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; }
+        .cust-header p { font-size: 13px; color: var(--text-muted); }
+        .cust-greeting span { background: linear-gradient(135deg,var(--cyan),var(--emerald)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .cust-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .cust-card { background: var(--surface-1); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 20px; transition: var(--transition); }
+        .cust-card:hover { border-color: rgba(0,212,255,0.1); }
+        .cust-card .cc-icon { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 16px; margin-bottom: 12px; }
+        .cust-card .cc-icon.cyan { background: var(--cyan-soft); color: var(--cyan); }
+        .cust-card .cc-icon.emerald { background: var(--emerald-soft); color: var(--emerald); }
+        .cust-card .cc-icon.teal { background: var(--teal-soft); color: var(--teal); }
+        .cust-card .cc-value { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; }
+        .cust-card .cc-label { font-size: 12px; color: var(--text-muted); }
+        .progress-card { background: var(--surface-1); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 20px; }
+        .progress-card .pc-info { flex: 1; }
+        .progress-card .pc-title { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+        .progress-card .pc-status { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
+        .progress-bar { height: 6px; background: rgba(255,255,255,0.06); border-radius: 6px; overflow: hidden; }
+        .progress-bar-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--cyan), var(--emerald)); transition: width 1s ease; }
+        .progress-card .pc-percent { font-size: 24px; font-weight: 800; color: var(--cyan); flex-shrink: 0; }
+        @media(max-width:768px) {
+            .cust-sidebar { transform: translateX(-100%); }
+            .cust-sidebar.open { transform: translateX(0); }
+            .cust-main { margin-left: 0; }
+            .cust-cards { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body class="cust-body">
+    <!-- Mobile toggle -->
+    <button style="position:fixed;top:16px;left:16px;z-index:200;width:36px;height:36px;border-radius:8px;background:var(--surface-1);border:1px solid var(--border-subtle);color:var(--text-primary);display:none;cursor:pointer" id="mobileCustToggle" onclick="document.getElementById('custSidebar').classList.toggle('open')">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <aside class="cust-sidebar" id="custSidebar">
+        <div class="brand">
+            <div class="brand-icon">R</div>
+            <div class="brand-text">Rullzye Store</div>
+        </div>
+        <nav class="cust-nav">
+            <a href="dashboard.html" class="active"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a href="pesanan.html"><i class="fas fa-shopping-bag"></i> Pesanan Saya</a>
+            <a href="invoice.html"><i class="fas fa-file-invoice"></i> Invoice</a>
+            <a href="progress.html"><i class="fas fa-chart-line"></i> Progress Project</a>
+            <a href="upload.html"><i class="fas fa-upload"></i> Upload File</a>
+            <a href="chat.html"><i class="fas fa-comment-dots"></i> Chat Admin</a>
+            <a href="download.html"><i class="fas fa-download"></i> Download Source Code</a>
+            <a href="riwayat.html"><i class="fas fa-history"></i> Riwayat Pesanan</a>
+            <a href="profil.html"><i class="fas fa-user"></i> Profil</a>
+        </nav>
+        <div style="margin-top:auto;padding-top:16px;border-top:1px solid var(--border-subtle)">
+            <a href="login.html" style="color:var(--text-muted);font-size:13px;display:flex;align-items:center;gap:8px"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <main class="cust-main">
+        <div class="cust-header">
+            <div>
+                <h1>Halo, <span class="gradient-text">Andi Pratama</span> 👋</h1>
+                <p>Selamat datang di dashboard customer Anda.</p>
+            </div>
+            <a href="../index.html" class="btn btn-secondary btn-sm"><i class="fas fa-external-link-alt"></i> Website</a>
+        </div>
+
+        <div class="cust-cards">
+            <div class="cust-card">
+                <div class="cc-icon cyan"><i class="fas fa-shopping-bag"></i></div>
+                <div class="cc-value">2</div>
+                <div class="cc-label">Pesanan Aktif</div>
+            </div>
+            <div class="cust-card">
+                <div class="cc-icon emerald"><i class="fas fa-check-circle"></i></div>
+                <div class="cc-value">3</div>
+                <div class="cc-label">Pesanan Selesai</div>
+            </div>
+            <div class="cust-card">
+                <div class="cc-icon teal"><i class="fas fa-file-invoice"></i></div>
+                <div class="cc-value">Rp 4.999K</div>
+                <div class="cc-label">Total Pembayaran</div>
+            </div>
+        </div>
+
+        <h3 style="font-size:16px;font-weight:700;letter-spacing:-0.02em;margin-bottom:14px">Progress Project</h3>
+
+        <div class="progress-card">
+            <div class="pc-info">
+                <div class="pc-title">Company Profile - PT StartupTech</div>
+                <div class="pc-status">Paket Professional • Mulai 10 Jan 2026</div>
+                <div class="progress-bar"><div class="progress-bar-fill" style="width:60%"></div></div>
+            </div>
+            <div class="pc-percent">60%</div>
+        </div>
+
+        <div class="progress-card">
+            <div class="pc-info">
+                <div class="pc-title">Landing Page - FashionStore</div>
+                <div class="pc-status">Paket Starter • Mulai 5 Jan 2026</div>
+                <div class="progress-bar"><div class="progress-bar-fill" style="width:100%"></div></div>
+            </div>
+            <div class="pc-percent" style="color:var(--emerald)">100%</div>
+        </div>
+
+        <div style="margin-top:24px;text-align:center">
+            <a href="../index.html#kontak" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Hubungi Admin</a>
+        </div>
+    </main>
+
+    <script>
+        if (window.innerWidth <= 768) {
+            document.getElementById('mobileCustToggle').style.display = 'block';
+        }
+        document.querySelectorAll('.progress-bar-fill').forEach(el => {
+            const w = el.style.width;
+            el.style.width = '0%';
+            setTimeout(() => el.style.width = w, 300);
+        });
+    </script>
+</body>
+</html>

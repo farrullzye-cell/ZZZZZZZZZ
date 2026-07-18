@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Upload File - Rullzye Store</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><link rel="stylesheet" href="../style.css"><style>.cust-body{background:var(--deep-bg);min-height:100vh;padding:24px;max-width:700px;margin:0 auto}.back-link{color:var(--text-muted);font-size:14px;transition:var(--transition);display:inline-flex;align-items:center;gap:6px;margin-bottom:20px}.back-link:hover{color:var(--cyan)}.upload-zone{background:var(--surface-1);border:2px dashed var(--border-subtle);border-radius:var(--radius);padding:60px 24px;text-align:center;transition:var(--transition);cursor:pointer;margin-bottom:20px}.upload-zone:hover,.upload-zone.dragover{border-color:var(--cyan);background:var(--cyan-soft)}.upload-zone i{font-size:48px;color:var(--cyan);margin-bottom:16px}.upload-zone h3{font-size:18px;font-weight:700;margin-bottom:6px}.upload-zone p{font-size:13px;color:var(--text-muted)}.file-list{background:var(--surface-1);border:1px solid var(--border-subtle);border-radius:var(--radius);padding:16px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between}.file-list .file-info{display:flex;align-items:center;gap:10px}.file-list .file-info i{color:var(--cyan)}.file-list .file-name{font-size:13px;font-weight:600}.file-list .file-size{font-size:11px;color:var(--text-muted)}.file-list .file-delete{color:var(--rose);cursor:pointer;transition:var(--transition)}.file-list .file-delete:hover{opacity:0.7}</style></head><body>
+<div class="cust-body">
+    <a href="dashboard.html" class="back-link"><i class="fas fa-arrow-left"></i> Kembali</a>
+    <h1 style="font-size:24px;font-weight:800;letter-spacing:-0.03em;margin-bottom:4px">Upload File</h1>
+    <p style="color:var(--text-muted);font-size:13px;margin-bottom:24px">Upload logo, desain, atau dokumen pendukung untuk project Anda.</p>
+
+    <div class="upload-zone" id="uploadZone">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <h3>Seret file ke sini</h3>
+        <p>atau klik untuk memilih file (JPG, PNG, PDF, ZIP, max 10MB)</p>
+        <input type="file" id="fileInput" multiple style="display:none" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.zip,.rar,.ai,.psd">
+    </div>
+
+    <div id="uploadedFiles">
+        <div class="file-list">
+            <div class="file-info"><i class="fas fa-file-image"></i><div><div class="file-name">logo-perusahaan.png</div><div class="file-size">2.4 MB</div></div></div>
+            <span class="file-delete" onclick="this.parentElement.remove()"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="file-list">
+            <div class="file-info"><i class="fas fa-file-pdf"></i><div><div class="file-name">brief-desain.pdf</div><div class="file-size">1.1 MB</div></div></div>
+            <span class="file-delete" onclick="this.parentElement.remove()"><i class="fas fa-times"></i></span>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" style="width:100%;margin-top:16px" onclick="alert('File berhasil diupload! Admin akan memprosesnya.')">Upload Semua File</button>
+</div>
+<script>
+    const zone = document.getElementById('uploadZone');
+    const input = document.getElementById('fileInput');
+    zone.addEventListener('click', () => input.click());
+    zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('dragover'); });
+    zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+    zone.addEventListener('drop', (e) => { e.preventDefault(); zone.classList.remove('dragover'); alert('File diterima!'); });
+    input.addEventListener('change', () => { if(input.files.length) alert(input.files.length + ' file siap diupload.'); });
+</script></body></html>
