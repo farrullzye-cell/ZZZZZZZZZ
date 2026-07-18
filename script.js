@@ -25,16 +25,37 @@ window.addEventListener('scroll', () => {
 
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('open');
-});
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navLinks.classList.remove('open');
+const navOverlay = document.getElementById('navOverlay');
+
+function toggleNav(open) {
+    navToggle.classList.toggle('active', open);
+    navLinks.classList.toggle('open', open);
+    if (navOverlay) navOverlay.classList.toggle('open', open);
+    document.body.classList.toggle('nav-open', open);
+}
+
+function closeNav() {
+    navToggle.classList.remove('active');
+    navLinks.classList.remove('open');
+    if (navOverlay) navOverlay.classList.remove('open');
+    document.body.classList.remove('nav-open');
+}
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.contains('open');
+        toggleNav(!isOpen);
     });
-});
+    if (navOverlay) {
+        navOverlay.addEventListener('click', closeNav);
+    }
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeNav);
+    });
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) closeNav();
+    });
+}
 
 // ===== BACK TO TOP =====
 const backToTop = document.getElementById('backToTop');

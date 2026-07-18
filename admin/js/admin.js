@@ -1,20 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('toggleSidebar');
-  if (toggle) toggle.addEventListener('click', () => {
-    const sidebar = document.getElementById('adminSidebar');
+  const sidebar = document.getElementById('adminSidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+
+  function openSidebar() {
     if (!sidebar) return;
     if (window.innerWidth <= 768) {
-      sidebar.classList.toggle('open');
+      sidebar.classList.add('open');
+      if (overlay) overlay.classList.add('open');
     } else {
       sidebar.classList.toggle('collapsed');
     }
-  });
+  }
+
+  function closeSidebar() {
+    if (sidebar) sidebar.classList.remove('open');
+    if (overlay) overlay.classList.remove('open');
+  }
+
+  if (toggle) toggle.addEventListener('click', openSidebar);
+
+  if (overlay) overlay.addEventListener('click', closeSidebar);
+
   const logout = document.getElementById('logoutBtn');
   if (logout) logout.addEventListener('click', (e) => {
     e.preventDefault();
     localStorage.removeItem('admin_token');
     window.location.href = '../index.html';
   });
+
   const batalBtns = document.querySelectorAll('#btnBatal');
   batalBtns.forEach(btn => btn.addEventListener('click', () => {
     const modal = btn.closest('.modal-overlay');
@@ -23,18 +37,26 @@ document.addEventListener('DOMContentLoaded', () => {
       window.crud.editingId = null;
     }
   }));
-  const sidebar = document.getElementById('adminSidebar');
+
   const main = document.querySelector('.admin-main');
   if (sidebar && main) {
     main.addEventListener('click', () => {
       if (window.innerWidth <= 768 && sidebar.classList.contains('open')) {
-        sidebar.classList.remove('open');
+        closeSidebar();
       }
     });
   }
+
+  // Close sidebar when a nav link is clicked on mobile
+  if (sidebar) {
+    sidebar.querySelectorAll('.sidebar-item').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) closeSidebar();
+      });
+    });
+  }
+
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && sidebar) {
-      sidebar.classList.remove('open');
-    }
+    if (window.innerWidth > 768) closeSidebar();
   });
 });
