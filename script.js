@@ -144,10 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Timeline items stagger
+    const isMobile = window.innerWidth < 768;
     gsap.utils.toArray('.timeline-item').forEach((item, i) => {
         gsap.from(item, {
             opacity: 0,
-            x: i % 2 === 0 ? -30 : 30,
+            x: isMobile ? 0 : (i % 2 === 0 ? -30 : 30),
             duration: 0.5,
             delay: i * 0.15,
             ease: 'power3.out',

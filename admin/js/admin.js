@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('toggleSidebar');
   if (toggle) toggle.addEventListener('click', () => {
-    document.getElementById('adminSidebar')?.classList.toggle('collapsed');
+    const sidebar = document.getElementById('adminSidebar');
+    if (!sidebar) return;
+    if (window.innerWidth <= 768) {
+      sidebar.classList.toggle('open');
+    } else {
+      sidebar.classList.toggle('collapsed');
+    }
   });
   const logout = document.getElementById('logoutBtn');
   if (logout) logout.addEventListener('click', (e) => {
@@ -17,4 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
       window.crud.editingId = null;
     }
   }));
+  const sidebar = document.getElementById('adminSidebar');
+  const main = document.querySelector('.admin-main');
+  if (sidebar && main) {
+    main.addEventListener('click', () => {
+      if (window.innerWidth <= 768 && sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+      }
+    });
+  }
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && sidebar) {
+      sidebar.classList.remove('open');
+    }
+  });
 });

@@ -1916,10 +1916,79 @@ ul { list-style: none; }
 }
 
 @media (max-width: 480px) {
-    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
     .layanan-grid { grid-template-columns: 1fr; }
-    .keunggulan-grid { grid-template-columns: 1fr 1fr; }
+    .keunggulan-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
     .pricing-grid { grid-template-columns: 1fr; }
+    .hero { padding: 120px 16px 60px; min-height: auto; }
+    .hero h1 { font-size: 28px; }
+    .hero-subtitle { font-size: 14px; }
+    .hero-cta .btn-lg { padding: 12px 24px; font-size: 14px; }
+    .hero-visual { display: none; }
+    .section-title { font-size: 22px; }
+    .section-desc { font-size: 13px; }
+    .container { padding: 0 16px; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .testimoni-card { padding: 20px 16px; }
+    .testimoni-card blockquote { font-size: 13px; }
+    .testimoni-author-name { font-size: 13px; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-card-content { padding: 16px; }
+    .blog-card-title { font-size: 15px; }
+    .faq-item { padding: 16px; }
+    .faq-question { font-size: 13px; }
+    .faq-answer { font-size: 13px; }
+    .subscribe-box { padding: 32px 20px; }
+    .subscribe-input-group input { font-size: 14px; padding: 12px 16px; }
+    .footer { padding: 40px 0 20px; }
+    .footer-row-links { flex-direction: column; gap: 32px; }
+    .pricing-card { padding: 24px 20px; }
+    .pricing-name { font-size: 18px; }
+    .pricing-amount { font-size: 32px; }
+    .pricing-features li { font-size: 12px; padding: 8px 0; }
+    .layanan-card { padding: 24px 20px; }
+    .layanan-card h3 { font-size: 15px; }
+    .layanan-card p { font-size: 12px; }
+    .keunggulan-item { padding: 16px; }
+    .keunggulan-item h4 { font-size: 13px; }
+    .keunggulan-item p { font-size: 11px; }
+    .timeline-content { padding: 16px; }
+    .timeline-content h3 { font-size: 15px; }
+    .timeline-content p { font-size: 12px; }
+    .stat-card { padding: 16px; }
+    .stat-card-value { font-size: 22px; }
+    .cta-buttons { flex-direction: column; align-items: stretch; }
+    .cta-buttons .btn { width: 100%; text-align: center; }
+    .page-title { font-size: 18px; }
+    .page-subtitle { font-size: 12px; }
+    .floating-wa { width: 48px; height: 48px; font-size: 20px; bottom: 16px; right: 16px; }
+}
+
+@media (max-width: 360px) {
+    .hero h1 { font-size: 24px; }
+    .hero-subtitle { font-size: 13px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .stat-card-value { font-size: 18px; }
+    .section-title { font-size: 20px; }
+    .nav-links { width: 260px; padding: 70px 20px; }
+    .pricing-card { padding: 20px 16px; }
+    .pricing-amount { font-size: 28px; }
+    .admin-content { padding: 16px; }
+    .data-table-wrap { overflow-x: auto; }
+    .data-table { font-size: 12px; }
+    .data-table th, .data-table td { padding: 8px 12px; white-space: nowrap; }
+    .topbar-search { width: 120px; }
+    .stat-cards { grid-template-columns: 1fr; }
+    .admin-topbar { padding: 0 12px; }
+    .modal-content { width: 95%; max-height: 90vh; }
+    .modal-body { padding: 16px; }
+    .modal-header { padding: 16px; }
+    .modal-footer { padding: 12px 16px; }
+    .form-control { font-size: 13px; padding: 8px 12px; }
+    .blog-card-thumb { height: 160px; }
+    .subscribe-box { padding: 24px 16px; }
+    .footer-row { flex-direction: column; gap: 32px; }
+    .footer-col { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
