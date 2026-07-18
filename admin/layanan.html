@@ -24,13 +24,13 @@
 </nav>
 <div class="sidebar-footer">
 <a href="../index.html" class="sidebar-item"><i class="fas fa-external-link-alt"></i><span>Lihat Website</span></a>
-<a href="#" class="sidebar-item" onclick="API.logout()"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+<a href="#" class="sidebar-item" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
 </div>
 </aside>
 <main class="admin-main">
 <header class="admin-topbar">
 <div class="topbar-left">
-<button class="toggle-sidebar" onclick="document.getElementById('adminSidebar').classList.toggle('collapsed')"><i class="fas fa-bars"></i></button>
+<button class="toggle-sidebar" id="toggleSidebar"><i class="fas fa-bars"></i></button>
 <div class="topbar-search"><i class="fas fa-search"></i><input type="text" id="searchLayanan" placeholder="Cari layanan..."></div>
 </div>
 <div class="topbar-right">
@@ -41,7 +41,7 @@
 <div class="admin-content">
 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
 <div><h1 class="page-title">Kelola Layanan</h1><p class="page-subtitle">Atur daftar layanan pembuatan website.</p></div>
-<button class="btn btn-primary" onclick="crud.create()"><i class="fas fa-plus"></i> Tambah Layanan</button>
+<button class="btn btn-primary" id="btnTambah"><i class="fas fa-plus"></i> Tambah Layanan</button>
 </div>
 <div class="data-table-wrap">
 <div class="data-table-header"><h3>Daftar Layanan</h3><span style="font-size:12px;color:var(--text-muted)" id="layananCount">0 layanan</span></div>
@@ -49,10 +49,9 @@
 </div>
 </div>
 </main>
-<!-- Modal -->
 <div class="modal-overlay" id="layananModal">
 <div class="modal-content">
-<div class="modal-header"><h3 id="layananModalTitle">Tambah Layanan</h3><button onclick="crud.closeModal()"><i class="fas fa-times"></i></button></div>
+<div class="modal-header"><h3 id="layananModalTitle">Tambah Layanan</h3><button id="closeModal"><i class="fas fa-times"></i></button></div>
 <form id="layananForm">
 <div class="modal-body">
 <div class="form-group"><label>Nama Layanan</label><input class="form-control" name="name" required></div>
@@ -63,7 +62,7 @@
 <div class="form-group"><label><input type="checkbox" name="isActive" checked> Aktif</label></div>
 </div>
 <div class="modal-footer">
-<button type="button" class="btn btn-secondary" onclick="crud.closeModal()">Batal</button>
+<button type="button" class="btn btn-secondary" id="btnBatal">Batal</button>
 <button type="submit" class="btn btn-primary">Simpan</button>
 </div>
 </form>
@@ -71,27 +70,7 @@
 </div>
 <script src="js/api.js"></script>
 <script src="js/auth-check.js"></script>
+<script src="js/admin.js"></script>
 <script src="js/crud.js"></script>
-<script>
-const crud = new CrudManager({
-  apiEndpoint: '/services',
-  tableId: 'layananTable',
-  modalId: 'layananModal',
-  modalTitleId: 'layananModalTitle',
-  formId: 'layananForm',
-  searchId: 'searchLayanan',
-  label: 'Layanan',
-  columns: [
-    { field: 'name' },
-    { field: 'description', render: (item) => (item.description || '').substring(0, 60) + '...' },
-    { field: 'icon', render: (item) => item.icon ? `<i class="${item.icon}" style="color:var(--cyan)"></i>` : '-' },
-    { field: 'sortOrder' },
-    { field: 'isActive', render: (item) => API.statusBadge(item.isActive ? 'active' : 'inactive') },
-  ],
-  fields: [
-    { field: 'name' }, { field: 'description' }, { field: 'icon' },
-    { field: 'image' }, { field: 'sortOrder' }, { field: 'isActive' },
-  ],
-});
-</script>
+<script src="js/layanan.js"></script>
 </body></html>

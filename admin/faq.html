@@ -24,13 +24,13 @@
 </nav>
 <div class="sidebar-footer">
 <a href="../index.html" class="sidebar-item"><i class="fas fa-external-link-alt"></i><span>Lihat Website</span></a>
-<a href="#" class="sidebar-item" onclick="API.logout()"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+<a href="#" class="sidebar-item" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
 </div>
 </aside>
 <main class="admin-main">
 <header class="admin-topbar">
 <div class="topbar-left">
-<button class="toggle-sidebar" onclick="document.getElementById('adminSidebar').classList.toggle('collapsed')"><i class="fas fa-bars"></i></button>
+<button class="toggle-sidebar" id="toggleSidebar"><i class="fas fa-bars"></i></button>
 <div class="topbar-search"><i class="fas fa-search"></i><input type="text" id="searchFaq" placeholder="Cari FAQ..."></div>
 </div>
 <div class="topbar-right">
@@ -41,7 +41,7 @@
 <div class="admin-content">
 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
 <div><h1 class="page-title">Kelola FAQ</h1><p class="page-subtitle">Atur pertanyaan yang sering diajukan.</p></div>
-<button class="btn btn-primary" onclick="crud.create()"><i class="fas fa-plus"></i> Tambah FAQ</button>
+<button class="btn btn-primary" id="btnTambah"><i class="fas fa-plus"></i> Tambah FAQ</button>
 </div>
 <div class="data-table-wrap">
 <div class="data-table-header"><h3>Daftar FAQ</h3></div>
@@ -51,7 +51,7 @@
 </main>
 <div class="modal-overlay" id="faqModal">
 <div class="modal-content">
-<div class="modal-header"><h3 id="faqModalTitle">Tambah FAQ</h3><button onclick="crud.closeModal()"><i class="fas fa-times"></i></button></div>
+<div class="modal-header"><h3 id="faqModalTitle">Tambah FAQ</h3><button id="closeModal"><i class="fas fa-times"></i></button></div>
 <form id="faqForm">
 <div class="modal-body">
 <div class="form-group"><label>Pertanyaan</label><textarea class="form-control" name="question" rows="2" required></textarea></div>
@@ -60,7 +60,7 @@
 <div class="form-group"><label><input type="checkbox" name="isActive" checked> Aktif</label></div>
 </div>
 <div class="modal-footer">
-<button type="button" class="btn btn-secondary" onclick="crud.closeModal()">Batal</button>
+<button type="button" class="btn btn-secondary" id="btnBatal">Batal</button>
 <button type="submit" class="btn btn-primary">Simpan</button>
 </div>
 </form>
@@ -68,24 +68,7 @@
 </div>
 <script src="js/api.js"></script>
 <script src="js/auth-check.js"></script>
+<script src="js/admin.js"></script>
 <script src="js/crud.js"></script>
-<script>
-const crud = new CrudManager({
-  apiEndpoint: '/faqs',
-  tableId: 'faqTable',
-  modalId: 'faqModal',
-  modalTitleId: 'faqModalTitle',
-  formId: 'faqForm',
-  searchId: 'searchFaq',
-  label: 'FAQ',
-  columns: [
-    { field: 'question', render: (item) => (item.question || '').substring(0, 80) + '...' },
-    { field: 'sortOrder' },
-    { field: 'isActive', render: (item) => API.statusBadge(item.isActive ? 'active' : 'inactive') },
-  ],
-  fields: [
-    { field: 'question' }, { field: 'answer' }, { field: 'sortOrder' }, { field: 'isActive' },
-  ],
-});
-</script>
+<script src="js/faq.js"></script>
 </body></html>

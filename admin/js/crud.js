@@ -8,12 +8,24 @@ class CrudManager {
 
   init() {
     this.load();
-    if (this.config.formId) {
-      document.getElementById(this.config.formId)?.addEventListener('submit', (e) => this.handleSubmit(e));
+    this.setupEventListeners();
+  }
+
+  setupEventListeners() {
+    const tbody = document.getElementById(this.config.tableId);
+    if (tbody) {
+      tbody.addEventListener('click', (e) => {
+        const btn = e.target.closest('.edit, .delete');
+        if (!btn) return;
+        const id = btn.dataset.id;
+        if (btn.classList.contains('edit')) this.edit(id);
+        if (btn.classList.contains('delete')) this.delete(id);
+      });
     }
-    if (this.config.searchId) {
-      document.getElementById(this.config.searchId)?.addEventListener('input', (e) => this.handleSearch(e));
-    }
+    const search = document.getElementById(this.config.searchId);
+    if (search) search.addEventListener('input', (e) => this.handleSearch(e));
+    const form = document.getElementById(this.config.formId);
+    if (form) form.addEventListener('submit', (e) => this.handleSubmit(e));
   }
 
   async load() {
@@ -32,15 +44,15 @@ class CrudManager {
       tbody.innerHTML = `<tr><td colspan="${this.config.columns.length + 1}" style="text-align:center;padding:32px;color:var(--text-muted)">Tidak ada data</td></tr>`;
       return;
     }
-    tbody.innerHTML = this.items.map((item, idx) => {
+    tbody.innerHTML = this.items.map((item) => {
       const cells = this.config.columns.map(col => {
-        if (col.render) return col.render(item, idx);
+        if (col.render) return col.render(item);
         const val = this.getNestedValue(item, col.field);
         return val != null ? val : '-';
       });
       cells.push(`<div class="table-actions">
-        <button class="edit" data-id="${item.id}" onclick="crud.edit('${item.id}')" title="Edit"><i class="fas fa-edit"></i></button>
-        <button class="delete" data-id="${item.id}" onclick="crud.delete('${item.id}')" title="Hapus"><i class="fas fa-trash"></i></button>
+        <button class="edit" data-id="${item.id}" title="Edit"><i class="fas fa-edit"></i></button>
+        <button class="delete" data-id="${item.id}" title="Hapus"><i class="fas fa-trash"></i></button>
       </div>`);
       return `<tr>${cells.map(c => `<td>${c}</td>`).join('')}</tr>`;
     }).join('');
@@ -63,11 +75,12 @@ class CrudManager {
       if (el.type === 'checkbox') el.checked = !!val;
       else el.value = val != null ? val : '';
     });
-    document.getElementById(this.config.modalTitleId) && (document.getElementById(this.config.modalTitleId).textContent = 'Edit ' + this.config.label);
+    const title = document.getElementById(this.config.modalTitleId);
+    if (title) title.textContent = 'Edit ' + this.config.label;
     this.openModal();
   }
 
-  async create() {
+  create() {
     this.editingId = null;
     const form = document.getElementById(this.config.formId);
     if (!form) return;
@@ -76,7 +89,8 @@ class CrudManager {
       const el = form.elements[f.field];
       if (el && el.type === 'checkbox') el.checked = f.default || false;
     });
-    document.getElementById(this.config.modalTitleId) && (document.getElementById(this.config.modalTitleId).textContent = 'Tambah ' + this.config.label);
+    const title = document.getElementById(this.config.modalTitleId);
+    if (title) title.textContent = 'Tambah ' + this.config.label;
     this.openModal();
   }
 
@@ -99,7 +113,6 @@ class CrudManager {
       const el = form.elements[f.field];
       if (!el) return;
       if (el.type === 'checkbox') data[f.field] = el.checked;
-      else if (el.type === 'number' || el.tagName === 'SELECT' && el.type !== 'select-one') data[f.field] = el.value;
       else data[f.field] = el.value;
     });
     try {
@@ -137,13 +150,8 @@ class CrudManager {
     });
   }
 
-  showSuccess(msg) {
-    this.showToast(msg, 'var(--emerald)');
-  }
-
-  showError(msg) {
-    this.showToast(msg, 'var(--rose)');
-  }
+  showSuccess(msg) { this.showToast(msg, 'var(--emerald)'); }
+  showError(msg) { this.showToast(msg, 'var(--rose)'); }
 
   showToast(msg, color) {
     const existing = document.querySelector('.crud-toast');
