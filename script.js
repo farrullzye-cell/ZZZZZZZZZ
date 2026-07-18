@@ -6,13 +6,16 @@
 ============================================ */
 
 // ===== LOADING SCREEN =====
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        document.getElementById('loadingScreen').classList.add('hidden');
+document.body.style.overflow = 'hidden';
+function hideLoading() {
+    const ls = document.getElementById('loadingScreen');
+    if (ls) {
+        ls.classList.add('hidden');
         document.body.style.overflow = '';
-    }, 2000);
-    document.body.style.overflow = 'hidden';
-});
+    }
+}
+window.addEventListener('load', () => setTimeout(hideLoading, 1500));
+setTimeout(hideLoading, 3000);
 
 // ===== NAVBAR =====
 const navbar = document.getElementById('navbar');
