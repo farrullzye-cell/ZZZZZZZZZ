@@ -8,16 +8,23 @@ const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@rullzyestore.com';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123';
 
 function generateToken(payload) {
-  return jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN || '7d' });
+  const secret = process.env.JWT_SECRET || 'rullzye-store-default-secret-key';
+  return jwt.sign(payload, secret, { expiresIn: process.env.JWT_EXPIRES_IN || '7d' });
 }
 
 router.post('/admin/login', (req, res) => {
-  const { email, password } = req.body;
-  if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-    const token = generateToken({ id: 'admin', email, role: 'admin' });
-    return res.json({ token, user: { id: 'admin', email, name: 'Admin', role: 'admin' } });
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) return res.status(400).json({ error: 'Email dan password wajib diisi' });
+    if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+      const token = generateToken({ id: 'admin', email, role: 'admin' });
+      return res.json({ token, user: { id: 'admin', email, name: 'Admin', role: 'admin' } });
+    }
+    res.status(401).json({ error: 'Email atau password salah' });
+  } catch (err) {
+    console.error('Login error:', err);
+    res.status(500).json({ error: 'Terjadi kesalahan server', detail: err.message });
   }
-  res.status(401).json({ error: 'Email atau password salah' });
 });
 
 router.post('/customer/login', async (req, res) => {
