@@ -22,7 +22,22 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Security
-app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: 'cross-origin' },
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https:'],
+      imgSrc: ["'self'", 'data:', 'https:', 'http:'],
+      fontSrc: ["'self'", 'https:', 'data:'],
+      connectSrc: ["'self'"],
+      formAction: ["'self'"],
+      frameAncestors: ["'none'"],
+      baseUri: ["'self'"],
+    },
+  },
+}));
 app.use(cors({ origin: process.env.CORS_ORIGIN || '*', credentials: true }));
 
 // Rate limiting

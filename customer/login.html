@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Customer - Rullzye Store</title>
+    <title>Admin Login - Rullzye Store</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -114,38 +114,6 @@
         </div>
     </div>
 
-    <script>
-        const API_BASE = '/api';
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = e.target.querySelector('button[type="submit"]');
-            btn.disabled = true; btn.textContent = 'Memproses...';
-            const email = e.target.querySelector('input[type="email"]').value;
-            const password = e.target.querySelector('input[type="password"]').value;
-            const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 15000);
-            try {
-                const res = await fetch(API_BASE + '/auth/admin/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password }),
-                    signal: controller.signal,
-                });
-                clearTimeout(timeout);
-                const data = await res.json();
-                if (!res.ok) throw new Error(data.error || 'Login gagal');
-                localStorage.setItem('admin_token', data.token);
-                window.location.href = '../admin/index.html';
-            } catch (err) {
-                clearTimeout(timeout);
-                if (err.name === 'AbortError') {
-                    alert('Server tidak merespons. Cek koneksi atau coba lagi.');
-                } else {
-                    alert('Error: ' + (err.message || 'Gagal login'));
-                }
-                btn.disabled = false; btn.textContent = 'Masuk';
-            }
-        });
-    </script>
+    <script src="js/login.js"></script>
 </body>
 </html>
